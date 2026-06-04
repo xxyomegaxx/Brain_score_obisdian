@@ -1,18 +1,18 @@
 ---
 id: Marquand2016
 titre: "Understanding Heterogeneity in Clinical Cohorts Using Normative Models: Beyond Case-Control Studies"
-auteur_principal: Andre F. Marquand
+auteur_principal: Marquand
 annee: 2016
 journal: Biological Psychiatry
 doi: 10.1016/j.biopsych.2015.12.023
-date_ajout: 2026-06-02
+date_ajout: 2026-06-03
 statut: lu
 theme:
   - "[[Mod. normative]]"
   - "[[Biomarqueurs]]"
   - "[[Scores-méd. personnalisée]]"
 methode_cat:
-  - "[[Stats classiques]]"
+  - "[[IA]]"
 population:
   - "[[Saine]]"
 type_irm:
@@ -21,6 +21,7 @@ interpretabilite: "[[Haute]]"
 pertinence: 5
 methode_detail:
   - "[[GPR]]"
+  - "[[EVS]]"
 modalite_detail:
   - "[[fMRI]]"
 dataset:
@@ -35,45 +36,47 @@ usage_score:
   - "[[Détection d'atypies]]"
   - "[[Association au phénotype]]"
   - "[[Stratification]]"
-tags_libres: [extreme-value-statistics, RDoC, heterogeneite]
-fichier_source: 
+tags_libres: []
+fichier_source:
 ---
 
+![[Marquand2016.png]]
+
 ## TL;DR
-La modélisation normative permet d'étudier les troubles cérébraux au niveau de chaque individu — comme un écart à la norme plutôt qu'une appartenance à un groupe — brisant la symétrie artificielle de l'approche cas-témoins.
+Premier cadre de modélisation normative pour l'imagerie : on apprend la distribution normale d'une population saine, puis on mesure pour chaque individu et chaque région son écart au modèle (Z-score), résumé en un indice d'anomalie unique — une alternative au paradigme cas-témoins qui permet l'inférence au niveau individuel.
 
 ## Contributions
-1. Introduit la modélisation normative comme alternative à l'approche cas-témoins, cartographiant la variation individuelle plutôt que deux groupes supposés homogènes. [Mod. normative]
-2. Propose un Z-score (NPM) par région mesurant l'écart de chaque sujet à la norme, avec quantification de l'incertitude. [Biomarqueurs]
-3. Agrège ces écarts en un indice d'anomalie individuel via les statistiques des valeurs extrêmes. [Scores-méd. personnalisée]
-4. Montre que le degré de déviation se relie spécifiquement à l'hyperactivité (TDAH) mais pas à l'inattention. [Biomarqueurs]
-5. Permet d'inclure les étiquettes diagnostiques comme covariables, donc d'inférer sur leur validité biologique. [Mod. normative]
+1. Introduit la modélisation normative pour parser l'hétérogénéité, sans dichotomiser la cohorte. [Mod. normative]
+2. Score de déviation probabiliste (Z/NPM) par sujet et par région, avec incertitude, via GPR. [Mod. normative]
+3. Indice d'anomalie global par sujet via théorie des valeurs extrêmes (brainscore). [Scores-méd. personnalisée]
+4. Spécificité clinique : corrélation avec l'hyperactivité (r=.91 top 1%) mais pas l'inattention. [Biomarqueurs]
+5. Deux mécanismes distincts derrière un même symptôme (extrême normal vs déviation idiosyncrasique). [Biomarqueurs]
 
 ## Classification
 | Dimension | Valeur | Justification |
 |---|---|---|
-| Thème principal | Mod. normative | Pose et illustre le cadre conceptuel de la modélisation normative |
-| Méthode | Stats classiques | GPR bayésien + statistiques des valeurs extrêmes |
-| Population | Saine | Cohorte HCP de 491 sains ; pathologie inférée comme extrême |
-| Type IRM | Fonctionnel | IRMf de tâche (traitement de la récompense) |
-| Interprétabilité | Haute | Cartes NPM régionales et Z-scores reliés à des symptômes |
-| Pertinence (1–5) | 5 | Papier fondateur définissant le Z-score de déviation |
+| Thème principal | Mod. normative | Article fondateur du cadre de modélisation normative |
+| Méthode | IA | GPR (apprentissage bayésien) au cœur du modèle |
+| Population | Saine | Cohorte saine N=491 (HCP) |
+| Type IRM | Fonctionnel | Contrastes fMRI récompense–baseline |
+| Interprétabilité | Haute | NPM par région lisibles + incertitude explicite |
+| Pertinence (1–5) | 5 | Papier socle du projet |
 
 ## Étape 1 — Données d'entrée
-**Features (y)** — quoi · niveau · nb de points : activité cérébrale liée à la récompense (contraste IRMf récompense-baseline), modélisée indépendamment à chaque brainordinate (vertex cortical / voxel sous-cortical) ; nombre exact de brainordinates non précisé.
-**Covariables (x)** — lesquelles · niveau · effets non-linéaires : delay discounting (impulsivité de trait, résumé par l'AUC à $200 et $40 000), au niveau du sujet ; effets non-linéaires accommodés par le noyau du processus gaussien.
+**Features (y)** — quoi · niveau · nb de points : images de contraste fMRI (récompense − baseline) ; niveau voxel/vertex (« brainordinate »), cerveau entier ; N = 491 sujets sains (HCP, 288 femmes, âge moyen 27 ans).
+**Covariables (x)** — lesquelles · niveau · effets non-linéaires : délai discounting (AUC à $40 000 et $200) comme proxy d'impulsivité trait ; niveau sujet ; relations non-linéaires accommodées par le GPR.
 
 ## Étape 2 — Modélisation normative
-Méthode · granularité · validation : régression par processus gaussien (GPR) bayésienne, un modèle estimé par brainordinate, fournissant moyenne et variance prédictives ; validation croisée 10-fold respectant la structure familiale des données ; N = 491 participants sains (HCP).
+Méthode · granularité · validation : régression par processus gaussien (GPR), estimée indépendamment pour chaque brainordinate ; validation croisée 10-fold tenant compte de la structure familiale ; coût ~ quelques secondes par localisation.
 
 ## Étape 3 — Scores déviants
-Type · niveau · direction · seuillage : Z-score normatif (NPM) Z = (y − ŷ) / √(σ²ij + σ²nj) combinant erreur, variance prédictive et variance normative ; calculé par région ; versions signée (top/bottom 1 %) et absolue ; seuillage à p < .05 corrigé FDR ; distribution des valeurs extrêmes pour l'inférence au niveau sujet.
+Type · niveau · direction · seuillage : Z-score (NPM) Z = (y − ŷ)/√(σ²ij + σ²nj), combinant erreur, variance prédictive du point test et variance normative ; calculé par région ; déviations signées (positives/négatives) et absolues ; seuillage p < .05 corrigé FDR.
 
 ## Étape 4 — Utilisation des scores
-Niveau · but · corrélé/comparé à : **Par région** → localisation des régions déviantes par sujet (patrons individualisés, aucune région chez plus de 3 sujets) et détection d'atypies (22 sujets déviants). **Global par sujet** → indice d'anomalie agrégé (block maxima, moyenne robuste à 90 % du top 1 % des Z) corrélé à l'hyperactivité (r = .91 pour le top 1 %, persistant jusqu'au top 20 %), et stratification des sujets en « extrême normal » vs. « déviation idiosyncrasique ».
+Niveau · but · corrélé/comparé à : (a) par région → localisation des régions déviantes par sujet (NPM ; aucune région déviante chez plus de 3 sujets) et détection d'atypies (22 sujets) ; (b) global par sujet → indice d'anomalie via valeurs extrêmes (moyenne tronquée 90% du top 1% des Z), associé à l'hyperactivité (r=.91 top 1% ; persiste : r=.22 à 20%), pas à l'inattention ; sert à stratifier les sujets à forte hyperactivité.
 
 ## Application clinique
-Lien avec symptômes / diagnostics / sous-groupes : la déviance se relie spécifiquement à l'hyperactivité du TDAH (et non à l'inattention), distinguant deux mécanismes biologiques convergeant vers le même symptôme ; cadre cohérent avec le RDoC, permettant d'étudier les axes de variation sans dichotomiser la cohorte ni présupposer les étiquettes diagnostiques.
+Lien avec symptômes / diagnostics / sous-groupes : TDAH — spécificité pour la dimension hyperactivité (et non l'inattention) ; met en évidence une hétérogénéité mécanistique où un même symptôme provient soit de l'extrême d'un axe normal, soit de déviations idiosyncrasiques.
 
 ## Mes réflexions
 *(à compléter par moi)*

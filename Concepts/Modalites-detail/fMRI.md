@@ -6,7 +6,12 @@ categorie: modalite-detail
 # fMRI
 
 ## C'est quoi
-L'IRM fonctionnelle (fMRI) mesure les variations du signal BOLD pour inférer l'activité neuronale. En contexte de tâche, elle est analysée via des modèles de régression générale (GLM) pour produire des cartes de contraste ; en resting-state, elle capte les corrélations temporelles de l'activité spontanée entre régions.
+IRM fonctionnelle : technique d'imagerie cérébrale mesurant l'activité neuronale indirectement via le signal BOLD (Blood-Oxygen-Level-Dependent). Peut être acquise au repos (resting-state) ou lors d'une tâche (task-based fMRI).
 
 ## Papiers
-- [[Marquand2016]] — Données d'IRM fonctionnelle de tâche (traitement de la récompense) servant de réponse biologique du modèle.
+- [[Holz2023]] — Acquisition EPI BOLD multi-sites harmonisée par ComBat pour la tâche émotionnelle.
+- [[Marquand2016]] — IRM fonctionnelle de tâche (incentive processing) fournissant les variables réponses.
+- [[Fraza2021]] — Modalité fonctionnelle présente parmi les IDPs modélisés.
+- [[Jing2023]] — IRM fonctionnelle de repos servant à calculer la connectivité dynamique.
+- [[OliveiraSaraiva2023]] — Données rs-fMRI au repos prétraitées sous FSL (MELODIC, ICA, dual regression).
+- [[Zabihi2024]] — Contrastes de task-fMRI cerveau entier comme entrée de l'autoencodeur.

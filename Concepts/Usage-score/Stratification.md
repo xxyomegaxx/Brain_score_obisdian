@@ -6,7 +6,10 @@ categorie: usage-score
 # Stratification
 
 ## C'est quoi
-> [!todo] Définition à rédiger.
+Usage des scores de déviation pour subdiviser une population clinique en sous-groupes homogènes, révélant des mécanismes pathophysiologiques distincts au sein d'un même diagnostic.
 
 ## Papiers
-- [[Marquand2016]] — Sépare les sujets à forte hyperactivité en deux mécanismes : extrême d'un axe normal vs. déviation idiosyncrasique du modèle.
+- [[Bethlehem2022]] — Clustering hiérarchique des profils de centiles regroupant les troubles en trois familles.
+- [[Jing2023]] — Regroupe les patients en deux sous-types via clustering des vecteurs de déviation.
+- [[Marquand2016]] — Sépare les sujets à forte hyperactivité en extrême d'un axe normal vs déviation idiosyncrasique.
+- [[DiBiase2022]] — Définit trois sous-types cellulaires de patients via clustering de Ward sur les composantes principales des couplages déviation–expression.

@@ -6,7 +6,11 @@ categorie: population
 # Saine
 
 ## C'est quoi
-> [!todo] Définition à rédiger.
+Cohorte composée exclusivement de participants sains (sans diagnostic psychiatrique ou neurologique), servant de référence pour l'apprentissage du modèle normatif.
 
 ## Papiers
-- [[Marquand2016]] — Le modèle normatif est estimé sur une cohorte de 491 participants sains (HCP), la pathologie étant traitée comme un extrême de la norme.
+- [[Dinga2021]] — Les exemples empiriques portent sur des sujets de référence sains du UK Biobank.
+- [[Marquand2016]] — Le modèle est appris et appliqué sur une cohorte entièrement saine de 491 sujets HCP.
+- [[Fraza2021]] — Cohorte UK Biobank de population générale 40–80 ans, servant à modéliser le vieillissement normal.
+- [[Lawrence2021]] — Échantillon communautaire UK Biobank non sélectionné sur la présence ou l'absence de pathologie.
+- [[Zabihi2024]] — Données d'adultes sains : HCP (jeunes adultes) et UK Biobank (population générale).

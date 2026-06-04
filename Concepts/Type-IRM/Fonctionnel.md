@@ -6,7 +6,12 @@ categorie: type-irm
 # Fonctionnel
 
 ## C'est quoi
-L'IRM fonctionnelle (IRMf) mesure l'activité cérébrale indirectement via le signal BOLD (Blood-Oxygen-Level-Dependent), reflétant les variations d'oxygénation du sang liées à l'activité neuronale. Elle peut être acquise au repos (resting-state) ou durant une tâche cognitive.
+IRM fonctionnelle (fMRI) : type d'acquisition IRM mesurant l'activité cérébrale dynamique via le signal BOLD, en condition de repos ou lors d'une tâche cognitive ou émotionnelle.
 
 ## Papiers
-- [[Marquand2016]] — Utilise l'IRMf de tâche (contraste récompense-baseline lors d'une tâche de gambling) comme variable réponse.
+- [[Holz2023]] — fMRI BOLD durant une tâche de face-matching émotionnel (faces négatives, positives/neutres, formes).
+- [[Marquand2016]] — Les features sont des contrastes fMRI récompense–baseline issus d'une tâche de gambling.
+- [[Fraza2021]] — Inclus parmi les 819 IDPs (imagerie fonctionnelle) modélisés en lot.
+- [[Jing2023]] — Connectivité fonctionnelle dynamique en rs-fMRI (fenêtre glissante, GIG-ICA) comme features principales.
+- [[OliveiraSaraiva2023]] — Travaille sur la connectivité fonctionnelle issue de rs-fMRI au repos.
+- [[Zabihi2024]] — N'utilise que des contrastes de task-fMRI (HCP : 7 tâches ; UKB : tâche emotion).

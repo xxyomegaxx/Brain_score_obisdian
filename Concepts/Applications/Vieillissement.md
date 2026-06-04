@@ -1,0 +1,17 @@
+---
+type: concept
+categorie: application
+---
+
+# Vieillissement
+
+## C'est quoi
+Domaine d'application centré sur la modélisation des trajectoires cérébrales liées à l'âge sur la durée de vie, afin de caractériser le vieillissement normal et de détecter des déviations individuelles associées à un vieillissement atypique ou pathologique.
+
+## Papiers
+- [[Dinga2021]] — Les exemples modélisent les trajectoires d'épaisseur corticale en fonction de l'âge sur la durée de vie adulte.
+- [[Bethlehem2022]] — Modélise la sénescence des volumes et l'expansion ventriculaire en fin de vie.
+- [[Fraza2021]] — Modélise les trajectoires cérébrales normales sur 40–80 ans (ex. WMH au fil de l'âge).
+- [[Lawrence2021]] — Étudie les effets de l'âge (et du sexe) sur la WM en milieu à fin de vie adulte.
+- [[Rutherford2022]] — Charte les trajectoires d'aging cérébral jusqu'à 100 ans.
+- [[Zabihi2024]] — L'âge est une cible centrale ; UKB fournit un continuum d'âge clair dans le latent.
