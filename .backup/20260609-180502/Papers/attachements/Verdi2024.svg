@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1010" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <style>
+    .title{font-size:15px;font-weight:700;fill:#fff}
+    .body{font-size:12.5px;fill:#fff}
+    .lbl{font-size:12px;fill:#334155}
+    .leg{font-size:12px;fill:#475569}
+    .edge{stroke:#94a3b8;stroke-width:2;fill:none}
+    .dash{stroke:#94a3b8;stroke-width:2;stroke-dasharray:6 5;fill:none}
+  </style>
+
+  <!-- Legend -->
+  <rect x="610" y="18" width="270" height="64" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+  <rect x="624" y="32" width="16" height="16" rx="3" fill="#0d9488"/>
+  <text x="648" y="45" class="leg">teal = niveau du score</text>
+  <rect x="624" y="56" width="16" height="16" rx="3" fill="#fb7185"/>
+  <text x="648" y="69" class="leg">corail = finalité du score</text>
+
+  <!-- Trunk -->
+  <line x1="450" y1="160" x2="450" y2="196" class="edge"/>
+  <line x1="450" y1="292" x2="450" y2="328" class="edge"/>
+
+  <!-- Data input (blue) -->
+  <rect x="285" y="66" width="330" height="94" rx="10" fill="#2563eb"/>
+  <text x="300" y="88" class="title">Données d'entrée</text>
+  <text class="body"><tspan x="300" y="108">Features (y) : épaisseur corticale (148 rég.</tspan><tspan x="300" y="124">Destrieux) + volumes sous-cort. (20), soit 168 rég.</tspan><tspan x="300" y="140">Covariables (x) : âge, sexe, site — 3 233 scans T1,</tspan><tspan x="300" y="155">1 181 sujets ADNI (FreeSurfer).</tspan></text>
+
+  <!-- Normative model (purple) -->
+  <rect x="285" y="196" width="330" height="96" rx="10" fill="#7c3aed"/>
+  <text x="300" y="218" class="title">Modélisation normative</text>
+  <text class="body"><tspan x="300" y="238">Régression bayésienne non-gaussienne (braincharts),</tspan><tspan x="300" y="254">1 modèle/région ; réf. ~58 k sains, 82 sites.</tspan><tspan x="300" y="270">Adaptation par transfert sur 70 % des contrôles ADNI</tspan><tspan x="300" y="286">(par site, stratifié sexe).</tspan></text>
+
+  <!-- Deviant scores (amber) -->
+  <rect x="285" y="328" width="330" height="92" rx="10" fill="#d97706"/>
+  <text x="300" y="350" class="title">Scores déviants</text>
+  <text class="body"><tspan x="300" y="370">z-score par région ; outlier = z &lt; −1,96 (signé ;</tspan><tspan x="300" y="386">z ventricules inversé).</tspan><tspan x="300" y="402">tOC = somme des outliers sur les 168 régions,</tspan><tspan x="300" y="417">par scan.</tspan></text>
+
+  <!-- branches from scores to teal roots -->
+  <path class="edge" d="M450,420 L450,445 L250,445 L250,470"/>
+  <path class="edge" d="M450,420 L450,445 L650,445 L650,470"/>
+
+  <!-- Teal root 1: Par région -->
+  <rect x="110" y="470" width="280" height="92" rx="10" fill="#0d9488"/>
+  <text x="124" y="492" class="title">Par région</text>
+  <text class="body"><tspan x="124" y="512">Cartes d'outliers par région cérébrale.</tspan><tspan x="124" y="528">Hippocampe gauche le plus fréquent :</tspan><tspan x="124" y="544">47 % → 60 % → 72 % (0/12/24 mois)</tspan><tspan x="124" y="559">et plus fort taux de changement.</tspan></text>
+
+  <!-- Teal root 2: Global par sujet -->
+  <rect x="510" y="470" width="280" height="92" rx="10" fill="#0d9488"/>
+  <text x="524" y="492" class="title">Global par sujet</text>
+  <text class="body"><tspan x="524" y="512">Total outlier count (tOC) = nombre</tspan><tspan x="524" y="528">de régions déviantes par scan ;</tspan><tspan x="524" y="544">marqueur d'atrophie individuel suivi</tspan><tspan x="524" y="559">dans le temps.</tspan></text>
+
+  <!-- leaves under Par région -->
+  <line x1="250" y1="562" x2="250" y2="592" class="edge"/>
+  <rect x="120" y="592" width="260" height="62" rx="10" fill="#fb7185"/>
+  <text x="134" y="613" class="title">Localisation</text>
+  <text class="body"><tspan x="134" y="632">Topographie des régions hors-norme ;</tspan><tspan x="134" y="648">hippocampe gauche = site dominant.</tspan></text>
+
+  <line x1="250" y1="654" x2="250" y2="684" class="edge"/>
+  <rect x="120" y="684" width="260" height="62" rx="10" fill="#fb7185"/>
+  <text x="134" y="705" class="title">Détection d'atypies</text>
+  <text class="body"><tspan x="134" y="724">Régions z &lt; −1,96 propres à chaque</tspan><tspan x="134" y="740">patient ; patterns très hétérogènes.</tspan></text>
+
+  <!-- leaves under Global -->
+  <line x1="650" y1="562" x2="650" y2="592" class="edge"/>
+  <rect x="520" y="592" width="260" height="58" rx="10" fill="#fb7185"/>
+  <text x="534" y="613" class="title">Comparaison de groupes</text>
+  <text class="body"><tspan x="534" y="632">tOC ↑ chez AD (β=0,38) et MCI,</tspan><tspan x="534" y="647">stable chez les contrôles.</tspan></text>
+
+  <line x1="650" y1="650" x2="650" y2="676" class="edge"/>
+  <rect x="520" y="676" width="260" height="62" rx="10" fill="#fb7185"/>
+  <text x="534" y="697" class="title">Association au phénotype</text>
+  <text class="body"><tspan x="534" y="716">tOC ↔ mémoire, fonctions exéc.,</tspan><tspan x="534" y="732">amyloïde, tau, APOE, stade AC.</tspan></text>
+
+  <line x1="650" y1="738" x2="650" y2="764" class="edge"/>
+  <rect x="520" y="764" width="260" height="62" rx="10" fill="#fb7185"/>
+  <text x="534" y="785" class="title">Prédiction</text>
+  <text class="body"><tspan x="534" y="804">Cox : +3 outliers/12 mois → +30 %</tspan><tspan x="534" y="820">de risque de conversion MCI→AD.</tspan></text>
+
+  <!-- application clinique (dashed) -->
+  <path class="dash" d="M250,746 L250,866"/>
+  <path class="dash" d="M650,826 L650,866"/>
+  <rect x="150" y="866" width="600" height="120" rx="12" class="dash"/>
+  <text x="170" y="892" class="lbl" font-weight="700">Application clinique</text>
+  <text class="lbl"><tspan x="170" y="914">Suivi individualisé de la trajectoire d'atrophie en maladie d'Alzheimer.</tspan><tspan x="170" y="934">Outil pronostique du risque de conversion MCI→AD et mesure de progression</tspan><tspan x="170" y="954">pour les essais cliniques, là où les statistiques de groupe masquent</tspan><tspan x="170" y="974">l'hétérogénéité inter-patients.</tspan></text>
+</svg>
