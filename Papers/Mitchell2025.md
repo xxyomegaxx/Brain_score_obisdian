@@ -14,6 +14,7 @@ population: []
 type_irm: []
 interpretabilite: ""
 pertinence: 3
+biomarqueur: "Non"
 methode_detail: []
 modalite_detail: []
 dataset: []
@@ -58,6 +59,13 @@ Usages **proposés** (perspectives, non réalisés ici) : stratification des pat
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : traumatisme cranio-cérébral (TBI) — plaidoyer pour une évaluation individualisée plutôt que cas-témoins.
+
+## Biomarqueur identifié ?
+**Verdict : Non**
+
+Article de revue / cadre conceptuel : il discute le potentiel de la modélisation normative comme outil de biomarqueurs en traumatologie cranio-cérébrale, mais ne réalise aucune analyse empirique et n'identifie aucun marqueur mesuré (aucune donnée, aucune performance discriminative rapportée).
+
+> « This review examines the principles, applications and methodological foundations of normative modelling, emphasizing its potential to assist in mitigating longstanding challenges in traumatic brain injury (TBI) research and management »
 
 ## Mes réflexions
 *(à compléter par moi)*
