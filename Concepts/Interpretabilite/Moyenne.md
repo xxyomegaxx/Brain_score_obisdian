@@ -16,3 +16,5 @@ Niveau d'interprétabilité intermédiaire où certaines composantes des scores 
 - [[Lawn2024]] — Z-scores localisables mais l'enrichissement moléculaire est un proxy indirect des neurotransmetteurs.
 - [[LawryAguila2022]] — Modèle profond opaque, mais les déviations latentes sont re-décodées vers des régions cérébrales interprétables.
 - [[OliveiraSaraiva2023]] — Le réseau est opaque mais l'erreur de reconstruction par paire de réseaux rend les anomalies localisables.
+- [[Pinaya2019]] — Modèle profond ; métrique de déviation globale moins directement interprétable que les z-scores paramétriques.
+- [[Wiegert2025]] — Espace latent profond ; déviation interprétée via sa magnitude et sa direction.

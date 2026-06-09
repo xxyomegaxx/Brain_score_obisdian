@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1120 1020" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1120" height="1020" fill="#ffffff"/>
+
+  <g transform="translate(830,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="400" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="560" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="140" y="74" width="400" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="340" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="155" y="113" class="d">3 métriques rs-fMRI à 3 échelles : SV (local),</text>
+  <text x="155" y="129" class="d">ReHo (régional), force de nœud (global)</text>
+  <text x="155" y="145" class="d">Niveau : par nœud — atlas HCP-MMP1.0 + sous-cortex</text>
+  <text x="155" y="161" class="d">625 sujets (282 TLE / 298 sains / 45 témoins path.)</text>
+
+  <rect x="580" y="74" width="400" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="780" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="595" y="113" class="d">Âge, sexe</text>
+  <text x="595" y="129" class="d">Niveau : sujet</text>
+  <text x="595" y="145" class="d">Modèle linéaire (effets non-linéaires non rapportés)</text>
+  <text x="595" y="161" class="d">4 jeux : MICA-MICs, NOEL, EpiC, Nanj (3 centres)</text>
+
+  <line x1="560" y1="54" x2="340" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="560" y1="54" x2="780" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="340" y1="170" x2="555" y2="192" stroke="#64748b"/>
+  <line x1="780" y1="170" x2="565" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="350" y="194" width="420" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="560" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="365" y="234" class="d">Régression linéaire chez les témoins sains</text>
+  <text x="365" y="250" class="d">Cartes beta : intercept β0, âge β1, sexe β2 + σ résidus</text>
+  <text x="365" y="266" class="d">Valeur prédite = β0 + β1·âge + β2·sexe (par région)</text>
+  <text x="365" y="282" class="d">Harmonisation inter-sites</text>
+  <line x1="560" y1="192" x2="560" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="370" y="326" width="380" height="86" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="560" y="346" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="385" y="366" class="d">W-score = déviation normalisée observé vs prédit ; signé</text>
+  <text x="385" y="382" class="d">Extrême si |W| ≥ 1,96 (queues 2,5 %)</text>
+  <text x="385" y="398" class="d">W-scores multivariés (SV + ReHo + NS)</text>
+  <line x1="560" y1="294" x2="560" y2="326" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 3 racines teal -->
+  <rect x="40" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="200" y="472" text-anchor="middle" class="t">Par région</text>
+  <text x="55" y="492" class="d">Cartes de déviation régionales (nœud)</text>
+  <text x="55" y="506" class="d">Prévalence par lobe ; chevauchement mésiotemporal</text>
+
+  <rect x="400" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="560" y="472" text-anchor="middle" class="t">Global par sujet</text>
+  <text x="415" y="492" class="d">Nombre de déviations extrêmes par patient</text>
+  <text x="415" y="506" class="d">Agrégation par hémisphère</text>
+
+  <rect x="760" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="920" y="472" text-anchor="middle" class="t">Par réseau</text>
+  <text x="775" y="492" class="d">Modèle connectome structurel (dMRI, HCP)</text>
+  <text x="775" y="506" class="d">Déviation prédite par les voisins structurels</text>
+
+  <line x1="470" y1="412" x2="200" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="560" y1="412" x2="560" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="650" y1="412" x2="920" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail : Par region (gauche) -->
+  <rect x="40" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="200" y="560" text-anchor="middle" class="t">Localisation</text>
+  <text x="55" y="578" class="d">Convergence mésiotemporale ; épicentres</text>
+
+  <rect x="40" y="608" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="200" y="628" text-anchor="middle" class="t">Détection d'atypies</text>
+  <text x="55" y="646" class="d">Cartes individuelles |W| ≥ 1,96</text>
+
+  <rect x="40" y="676" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="200" y="696" text-anchor="middle" class="t">Comparaison de groupes</text>
+  <text x="55" y="714" class="d">TLE vs témoins ; ipsi vs controlatéral</text>
+
+  <line x1="200" y1="510" x2="200" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="200" y1="588" x2="200" y2="608" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="200" y1="656" x2="200" y2="676" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail : Global par sujet (centre) -->
+  <rect x="400" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="560" y="560" text-anchor="middle" class="t">Prédiction</text>
+  <text x="415" y="578" class="d">TLE vs témoins path. AUC 0,77 ; crise AUC 0,64</text>
+
+  <rect x="400" y="608" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="560" y="628" text-anchor="middle" class="t">Stratification</text>
+  <text x="415" y="646" class="d">Latéralisation gauche/droite AUC 0,74</text>
+
+  <line x1="560" y1="510" x2="560" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="560" y1="588" x2="560" y2="608" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail : Par reseau (droite) -->
+  <rect x="760" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="920" y="560" text-anchor="middle" class="t">Association au phénotype</text>
+  <text x="775" y="578" class="d">Déviations controlatérales ↔ mauvais pronostic</text>
+
+  <line x1="920" y1="510" x2="920" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="370" y="830" width="380" height="86" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="560" y="852" text-anchor="middle" class="t">Application clinique</text>
+  <text x="385" y="872" class="d">Épilepsie temporale pharmaco-résistante</text>
+  <text x="385" y="888" class="d">Bilan préchirurgical : diagnostic, latéralisation</text>
+  <text x="385" y="904" class="d">Prédiction de la liberté de crise postopératoire</text>
+
+  <line x1="200" y1="724" x2="470" y2="830" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="560" y1="656" x2="560" y2="830" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="920" y1="588" x2="650" y2="830" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

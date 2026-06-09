@@ -1,0 +1,133 @@
+<svg viewBox="0 0 820 1250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .box{cursor:pointer;}
+      .box:hover rect, .box:hover .frame{filter:brightness(1.05);stroke-width:2.5;}
+      .ttl{font-weight:700;font-size:14px;}
+      .ln{font-size:11.5px;}
+      .edge{stroke:#94a3b8;stroke-width:1.6;fill:none;marker-end:url(#arw);}
+    </style>
+    <script type="text/javascript"><![CDATA[
+      function sendPrompt(t){ try{ if(window.parent) window.parent.postMessage({type:'prompt',text:t},'*'); }catch(e){} }
+    ]]></script>
+  </defs>
+
+  <rect width="820" height="1250" fill="#ffffff"/>
+
+  <!-- Legende -->
+  <g transform="translate(560,16)">
+    <rect width="244" height="58" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="12" y="14" width="16" height="12" rx="3" fill="#14b8a6"/>
+    <text x="36" y="24" class="ln" fill="#334155">teal = niveau du score</text>
+    <rect x="12" y="34" width="16" height="12" rx="3" fill="#fb7185"/>
+    <text x="36" y="44" class="ln" fill="#334155">corail = finalite du score</text>
+  </g>
+
+  <!-- Donnees d'entree -->
+  <g class="box" onclick="sendPrompt('Detaille l-etape Donnees d-entree de Dorfschmidt 2025')">
+    <rect x="210" y="20" width="320" height="34" rx="9" fill="#3b82f6"/>
+    <text x="370" y="42" text-anchor="middle" class="ttl" fill="#fff">Donnees d'entree</text>
+  </g>
+
+  <g class="box" onclick="sendPrompt('Quelles features (y) sont modelisees dans Dorfschmidt 2025 ?')">
+    <rect x="50" y="78" width="300" height="100" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="64" y="98" class="ttl" fill="#1e3a8a">Features (y)</text>
+    <text x="64" y="118" class="ln" fill="#1e3a8a">Volume MG, epaisseur, surface, sous-cortical</text>
+    <text x="64" y="136" class="ln" fill="#1e3a8a">Indice d'asymetrie AI = (L - R) / (L + R)</text>
+    <text x="64" y="154" class="ln" fill="#1e3a8a">Niveau : par region (Desikan-Killiany)</text>
+    <text x="64" y="172" class="ln" fill="#1e3a8a">177 701 scans / 138 231 sujets, 128 etudes</text>
+  </g>
+  <g class="box" onclick="sendPrompt('Quelles covariables (x) utilise Dorfschmidt 2025 ?')">
+    <rect x="410" y="78" width="300" height="100" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="424" y="98" class="ttl" fill="#1e3a8a">Covariables (x)</text>
+    <text x="424" y="118" class="ln" fill="#1e3a8a">Age : ~20 SPM a 102 ans (echelle log)</text>
+    <text x="424" y="136" class="ln" fill="#1e3a8a">Sexe (modeles stratifies)</text>
+    <text x="424" y="154" class="ln" fill="#1e3a8a">Site (effet aleatoire)</text>
+    <text x="424" y="172" class="ln" fill="#1e3a8a">Age non-lineaire : polynomes fractionnaires</text>
+  </g>
+  <path class="edge" d="M300,54 L205,78"/>
+  <path class="edge" d="M440,54 L555,78"/>
+  <path class="edge" d="M200,178 C200,198 360,200 365,210"/>
+  <path class="edge" d="M560,178 C560,198 380,200 375,210"/>
+
+  <!-- Modelisation normative -->
+  <g class="box" onclick="sendPrompt('Explique la modelisation normative GAMLSS de Dorfschmidt 2025')">
+    <rect x="170" y="212" width="400" height="128" rx="10" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="186" y="234" class="ttl" fill="#5b21b6">Modelisation normative</text>
+    <text x="186" y="254" class="ln" fill="#5b21b6">GAMLSS (moyenne, variance, skew, kurtosis)</text>
+    <text x="186" y="272" class="ln" fill="#5b21b6">Polynomes fractionnaires + site aleatoire</text>
+    <text x="186" y="290" class="ln" fill="#5b21b6">Un modele par region et par hemisphere</text>
+    <text x="186" y="308" class="ln" fill="#5b21b6">Validation : leave-one-study-out + bootstrap</text>
+    <text x="186" y="326" class="ln" fill="#5b21b6">QC : Euler index ; petits sites en pseudo-sites</text>
+  </g>
+  <path class="edge" d="M370,340 L370,358"/>
+
+  <!-- Scores deviants -->
+  <g class="box" onclick="sendPrompt('Comment les scores de deviation (centiles d-asymetrie) sont-ils definis dans Dorfschmidt 2025 ?')">
+    <rect x="170" y="360" width="400" height="112" rx="10" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="186" y="382" class="ttl" fill="#92400e">Scores deviants</text>
+    <text x="186" y="402" class="ln" fill="#92400e">z classique invalide (moments superieurs)</text>
+    <text x="186" y="420" class="ln" fill="#92400e">Centile + centile standard (quantile normal)</text>
+    <text x="186" y="438" class="ln" fill="#92400e">Centiles regionaux + centiles d'asymetrie</text>
+    <text x="186" y="456" class="ln" fill="#92400e">Direction : AI &gt; 0 gauche, AI &lt; 0 droite</text>
+  </g>
+  <path class="edge" d="M370,472 L370,504"/>
+
+  <!-- Branche teal : Par region -->
+  <g class="box" onclick="sendPrompt('Comment le niveau Par region est-il exploite dans Dorfschmidt 2025 ?')">
+    <rect x="190" y="506" width="360" height="92" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+    <text x="206" y="528" class="ttl" fill="#0f766e">Niveau — Par region</text>
+    <text x="206" y="548" class="ln" fill="#0f766e">Centiles par region et par hemisphere</text>
+    <text x="206" y="566" class="ln" fill="#0f766e">Scores d'asymetrie par paire gauche/droite</text>
+    <text x="206" y="584" class="ln" fill="#0f766e">Jalons : pic de croissance / de declin</text>
+  </g>
+  <path class="edge" d="M370,598 L370,626"/>
+
+  <g class="box" onclick="sendPrompt('Localisation des asymetries dans Dorfschmidt 2025 : detaille')">
+    <rect x="200" y="628" width="340" height="74" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="216" y="649" class="ttl" fill="#9f1239">Finalite — Localisation</text>
+    <text x="216" y="669" class="ln" fill="#9f1239">Cartes de trajectoires et de jalons</text>
+    <text x="216" y="687" class="ln" fill="#9f1239">Gauche precoce (assoc.), droite tardive (sensoriel)</text>
+  </g>
+  <path class="edge" d="M370,702 L370,724"/>
+
+  <g class="box" onclick="sendPrompt('Comparaison de groupes dans Dorfschmidt 2025 : detaille')">
+    <rect x="200" y="726" width="340" height="74" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="216" y="747" class="ttl" fill="#9f1239">Finalite — Comparaison de groupes</text>
+    <text x="216" y="767" class="ln" fill="#9f1239">Cas-temoins des centiles d'asymetrie</text>
+    <text x="216" y="785" class="ln" fill="#9f1239">ASD, schizophrenie, Alzheimer ; P_FDR &lt; 0,05</text>
+  </g>
+  <path class="edge" d="M370,800 L370,822"/>
+
+  <g class="box" onclick="sendPrompt('Detection d-atypies dans Dorfschmidt 2025 : detaille')">
+    <rect x="200" y="824" width="340" height="74" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="216" y="845" class="ttl" fill="#9f1239">Finalite — Detection d'atypies</text>
+    <text x="216" y="865" class="ln" fill="#9f1239">Centiles plus extremes chez les patients</text>
+    <text x="216" y="883" class="ln" fill="#9f1239">Ecart-type accru (asymetrie fluctuante)</text>
+  </g>
+  <path class="edge" d="M370,898 L370,920"/>
+
+  <g class="box" onclick="sendPrompt('Association au phenotype dans Dorfschmidt 2025 : detaille')">
+    <rect x="200" y="922" width="340" height="92" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="216" y="943" class="ttl" fill="#9f1239">Finalite — Association au phenotype</text>
+    <text x="216" y="963" class="ln" fill="#9f1239">Effet de la lateralite manuelle</text>
+    <text x="216" y="981" class="ln" fill="#9f1239">Correlation genetique L-R (rho_GM = -0,63)</text>
+    <text x="216" y="999" class="ln" fill="#9f1239">Heritabilite SNP : 2-6 %</text>
+  </g>
+  <path class="edge" d="M370,1014 L370,1048"/>
+
+  <!-- Application clinique (pointilles) -->
+  <g class="box" onclick="sendPrompt('Quelle application clinique dans Dorfschmidt 2025 ?')">
+    <rect class="frame" x="140" y="1050" width="460" height="124" rx="12" fill="#f8fafc" stroke="#475569" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="370" y="1074" text-anchor="middle" class="ttl" fill="#1e293b">Application clinique</text>
+    <text x="370" y="1096" text-anchor="middle" class="ln" fill="#334155">Autisme, schizophrenie, maladie d'Alzheimer</text>
+    <text x="370" y="1116" text-anchor="middle" class="ln" fill="#334155">Variabilite d'asymetrie accrue chez les patients</text>
+    <text x="370" y="1136" text-anchor="middle" class="ln" fill="#334155">Pistes : diagnostic de precision, suivi en Alzheimer</text>
+    <text x="370" y="1156" text-anchor="middle" class="ln" fill="#334155">Presente comme demonstration de faisabilite</text>
+  </g>
+
+  <text x="20" y="1220" class="ln" fill="#94a3b8">Boites cliquables — touchez un noeud pour l'explorer en detail.</text>
+</svg>

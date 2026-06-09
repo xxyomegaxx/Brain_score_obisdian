@@ -33,9 +33,12 @@ Imagerie par résonance magnétique structurelle (structural MRI) — séquences
 - [[Marquand2019]] — Modalité structurelle illustrant le readout biologique (ex. épaisseur corticale).
 - [[Mito2025]] — IRM structurelle évoquée comme modalité pratique pour les biomarqueurs prognostiques.
 - [[Parker2025]] — IRM structurelle T1w traitée par FreeSurfer (aparc.stats, aseg.stats).
+- [[Pinaya2019]] — Mesures morphologiques structurelles (épaisseur corticale, volumes).
 - [[Rutherford2022]] — Mesures dérivées d'IRM structurelle (Freesurfer v6.0, atlas Destrieux 188 régions).
 - [[Rutherford2022b]] — Mesures morphométriques structurelles (épaisseur, volumes) extraites par FreeSurfer dans la démo.
+- [[Shao2024]] — Volume de matière grise régional (T1w).
 - [[Verdi2024]] — IRM structurelle T1 pondérée, segmentée par FreeSurfer recon-all.
+- [[Wiegert2025]] — IRM structurelle cerveau-entier voxel-wise.
 - [[Wolfers2018]] — Images structurelles T1w traitées par VBM et FreeSurfer.
 - [[Wolfers2020]] — IRM structurelle T1 segmentée sous SPM12/DARTEL pour extraire la matière grise.
 - [[Zabihi2019]] — Mesures morphométriques (épaisseur, surface) issues d'IRM structurelle T1.

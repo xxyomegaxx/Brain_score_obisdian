@@ -33,9 +33,12 @@ Type d'IRM mesurant l'anatomie cérébrale statique — volumes, épaisseurs cor
 - [[Marquand2019]] — Exemples portant sur des mesures structurelles comme l'épaisseur corticale.
 - [[Mito2025]] — Recommande l'IRM structurelle pour des biomarqueurs prognostiques plus pratiques.
 - [[Parker2025]] — Épaisseur corticale et volumes hippocampe/amygdale dérivés d'IRM structurelle T1w (FreeSurfer).
+- [[Pinaya2019]] — Épaisseur corticale et volumes sous-corticaux (FreeSurfer 5.3).
 - [[Rutherford2022]] — Modélise épaisseur corticale et volumes sous-corticaux issus d'IRM T1w.
 - [[Rutherford2022b]] — Démonstration sur IRM structurelle : épaisseur corticale et volumes sous-corticaux.
+- [[Shao2024]] — Volume de matière grise (T1w).
 - [[Verdi2024]] — Épaisseur corticale et volumes sous-corticaux dérivés d'IRM T1 (FreeSurfer).
+- [[Wiegert2025]] — IRM structurelle cerveau-entier (voxel-wise).
 - [[Wolfers2018]] — IRM T1w : morphométrie VBM (substance grise/blanche) et mesures FreeSurfer.
 - [[Wolfers2020]] — Volume de matière grise (VBM) dérivé d'IRM structurelle T1 MPRAGE.
 - [[Zabihi2019]] — IRM T1 structurelle ; épaisseur corticale et surface extraites par FreeSurfer.

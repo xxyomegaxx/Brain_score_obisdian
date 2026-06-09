@@ -1,0 +1,82 @@
+<svg viewBox="0 0 980 760" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="760" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée (simulées)</text>
+
+  <rect x="60" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">Volume hippocampique (marqueur unique)</text>
+  <text x="75" y="129" class="d">Niveau région/marqueur</text>
+  <text x="75" y="145" class="d">Échantillons simulés : 50 → 50 000 points</text>
+  <text x="75" y="161" class="d">Répétés pour estimer la variabilité</text>
+
+  <rect x="530" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge (plage 45–80 ans)</text>
+  <text x="545" y="129" class="d">Vérités-terrain plausibles connues</text>
+  <text x="545" y="145" class="d">Formes linéaires et non-linéaires</text>
+  <text x="545" y="161" class="d">Aucune donnée IRM réelle</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="170" x2="485" y2="192" stroke="#64748b"/>
+  <line x1="725" y1="170" x2="495" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="194" width="420" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="234" class="d">Courbes de percentiles linéaires et non-linéaires</text>
+  <text x="295" y="250" class="d">Cadre GAMLSS (code public)</text>
+  <text x="295" y="266" class="d">Réajustées sur chaque échantillon simulé</text>
+  <text x="295" y="282" class="d">Comparées à la vérité-terrain ; focus 1/5/10e percentile</text>
+  <line x1="490" y1="192" x2="490" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="326" width="380" height="86" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="346" text-anchor="middle" class="t">Scores déviants (objet d'étude)</text>
+  <text x="315" y="366" class="d">Estimation des centiles eux-mêmes</text>
+  <text x="315" y="382" class="d">Compromis biais–variance quantifié</text>
+  <text x="315" y="398" class="d">Pas de z-score appliqué à des sujets réels</text>
+  <line x1="490" y1="294" x2="490" y2="326" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 1 racine teal -->
+  <rect x="330" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="490" y="472" text-anchor="middle" class="t">Par région</text>
+  <text x="345" y="492" class="d">Marqueur régional unique (hippocampe)</text>
+  <text x="345" y="506" class="d">Précision sur ses percentiles externes</text>
+  <line x1="490" y1="412" x2="490" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- finalite non rapportee (note, pas de corail) -->
+  <rect x="330" y="540" width="320" height="48" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="4 3"/>
+  <text x="490" y="560" text-anchor="middle" class="t">Finalité : non rapportée</text>
+  <text x="345" y="578" class="d">Étude méthodologique de simulation</text>
+  <line x1="490" y1="510" x2="490" y2="540" stroke="#94a3b8"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="630" width="380" height="86" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="652" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="672" class="d">Aucune appliquée (pas de cohorte de patients)</text>
+  <text x="315" y="688" class="d">Guide : taille d'échantillon minimale, biais + variance</text>
+  <text x="315" y="704" class="d">Mise en garde : éviter l'extrapolation aux extrémités d'âge</text>
+
+  <line x1="490" y1="588" x2="490" y2="630" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

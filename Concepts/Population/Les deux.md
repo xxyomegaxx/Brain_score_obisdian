@@ -27,14 +27,18 @@ Cohorte d'étude comprenant à la fois des individus sains (servant à l'entraî
 - [[Kumar2023b]] — Apprend sur sains (UKB + CN ADNI) puis quantifie les déviations chez des patients AD.
 - [[Lawn2024]] — 607 sains (CamCAN + UCLA) définissent la norme, appliquée à 119 patients SZ/BPD/TDAH.
 - [[LawryAguila2022]] — Modèle appris sur sujets sains (UK Biobank) puis appliqué à des cohortes pathologiques (UKB cas/témoins, ADNI).
+- [[Lin2024]] — Patients schizophrènes ; norme dérivée de contrôles sains (Cam-CAN).
 - [[Lv2021]] — 195 sains servent à établir la norme, 322 patients schizophrènes sont positionnés contre cette norme.
 - [[Marquand2019]] — Cadre fondé sur une cohorte de référence saine appliquée à des cohortes cliniques.
 - [[Mito2025]] — Cadre conceptuel comparant patients épileptiques à une référence normative de sujets sains.
 - [[OliveiraSaraiva2023]] — Entraînement sur sujets sains, test sur sujets sains et patients psychiatriques.
 - [[Parker2025]] — Référence saine (56 173 sujets) plus patients AD/MCI/DLFT comparés à des témoins normaux.
+- [[Pinaya2019]] — Contrôles sains pour l'entraînement ; patients schizophrènes et autistes pour le test.
 - [[Rutherford2022]] — Combine une grande cohorte de référence saine et un échantillon clinique transdiagnostique.
 - [[Rutherford2022b]] — Cohorte de référence neurotypique ; jeu test mêlant témoins et groupes de patients.
+- [[Shao2024]] — 187 patients dépressifs et 905 contrôles (dont 739 pour le modèle normatif).
 - [[Verdi2024]] — Modèle de référence sur ~58 k sujets sains, appliqué à une cohorte clinique ADNI (AD, MCI, contrôles).
+- [[Wiegert2025]] — Référence saine/peu symptomatique + groupes symptomatiques (MDD, GAD, AUD).
 - [[Wolfers2018]] — 256 contrôles sains servent de référence normative, appliquée à 218 schizophrénies et 190 bipolaires.
 - [[Wolfers2020]] — Plage normative estimée sur des témoins sains, appliquée à des adultes avec TDAH persistant (cohorte IMpACT).
 - [[Xie2025]] — 282 patients TLE, 298 témoins sains et 45 témoins pathologiques (épilepsie extratemporale).

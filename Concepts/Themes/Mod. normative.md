@@ -31,15 +31,20 @@ Approche de modélisation qui apprend la distribution d'une population de réfé
 - [[Lawn2024]] — Construit des modèles normatifs (âge/sexe) des réseaux enrichis molécularement pour quantifier les déviations.
 - [[Lawrence2021]] — Construit des courbes centiles normatives sexe-stratifiées de la microstructure WM, comme référentiel pour le vieillissement.
 - [[LawryAguila2022]] — Bâtit un modèle normatif du cerveau sain (cVAE) servant de référence pour quantifier des déviations individuelles.
+- [[Lin2024]] — Modèles normatifs sexe-spécifiques de la connectivité fonctionnelle, exploités pour les déviations individuelles.
 - [[Lv2021]] — Construit et valide des modèles normatifs de FA et de CT par régression quantile sur 195 adultes sains.
 - [[Marquand2016]] — Article fondateur qui introduit la modélisation normative comme alternative au cas-témoins pour l'imagerie.
 - [[Marquand2019]] — Revue conceptuelle fondatrice définissant la modélisation normative comme cadre d'inférence individuelle.
+- [[Mitchell2025]] — Revue des principes et fondements méthodologiques de la modélisation normative, appliquée au TBI.
 - [[Mito2025]] — Revue plaidant pour la modélisation normative comme cadre central des biomarqueurs IRM individualisés en épilepsie.
 - [[OliveiraSaraiva2023]] — Construit un modèle de normalité par autoencodeur entraîné sur sujets sains, dont la déviation détecte les patients.
 - [[Parker2025]] — Développe et applique des cartes normatives (brain charts) généralisables à l'individu pour la neurodégénérescence.
+- [[Pinaya2019]] — Modèle normatif par autoencodeur profond entraîné sur des contrôles sains ; déviation = erreur de reconstruction.
 - [[Rutherford2022]] — Papier fondateur qui construit et valide un modèle normatif de référence lifespan du cerveau.
 - [[Rutherford2022b]] — Protocole de référence pour construire et appliquer des modèles normatifs avec le PCNtoolkit.
+- [[Shao2024]] — Construit un modèle normatif du volume de matière grise par région sur le cycle de vie.
 - [[Verdi2024]] — Étend la modélisation normative neuro-anatomique au suivi longitudinal de l'AD pour quantifier l'atrophie individuelle dans le temps.
+- [[Wiegert2025]] — Cadre normatif profond cerveau-entier modélisant la déviation en magnitude et direction dans un espace latent.
 - [[Wolfers2018]] — Cartographie l'hétérogénéité de la schizophrénie et du trouble bipolaire via les déviations individuelles à un modèle normatif.
 - [[Wolfers2020]] — Construit un modèle normatif de la matière grise saine et y situe chaque patient TDAH pour décrire sa biologie individuellement.
 - [[Xie2025]] — Construit des modèles normatifs des métriques rs-fMRI chez les sujets sains pour quantifier les déviations individuelles.

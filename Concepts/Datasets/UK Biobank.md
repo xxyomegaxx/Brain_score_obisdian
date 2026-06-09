@@ -23,4 +23,5 @@ Biobanque longitudinale britannique à grande échelle comprenant plus de 500 00
 - [[LawryAguila2022]] — Cohorte d'entraînement (sujets sains) et premier jeu de test cas/témoins (SEP, bipolaire).
 - [[Rutherford2022]] — Source majeure de la cohorte de référence (≈59 % de l'échantillon total).
 - [[Verdi2024]] — Fait partie des sources combinées (~58 k sujets sains, 82 sites) du jeu de référence braincharts.
+- [[Wiegert2025]] — Cohorte de validation externe (N ≈ 25 000).
 - [[Zabihi2024]] — 20 781 participants, 5 contrastes (~104K scans) pour réentraînement et analyse des associations nIDPs.

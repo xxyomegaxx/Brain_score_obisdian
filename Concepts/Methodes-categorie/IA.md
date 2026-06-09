@@ -14,3 +14,5 @@ Catégorie regroupant les méthodes d'apprentissage automatique et d'intelligenc
 - [[LawryAguila2022]] — Recourt à l'apprentissage profond non supervisé (autoencodeur variationnel conditionnel) plutôt qu'à une régression classique.
 - [[Marquand2016]] — Le modèle normatif repose sur la régression par processus gaussien, une méthode d'apprentissage bayésien.
 - [[OliveiraSaraiva2023]] — Utilise un autoencodeur d'apprentissage profond comme modèle normatif.
+- [[Pinaya2019]] — Autoencodeur profond (apprentissage profond) pour la modélisation normative.
+- [[Wiegert2025]] — Autoencodeur profond encodant l'IRM voxel-wise cerveau-entier dans un espace latent de 256 dimensions.

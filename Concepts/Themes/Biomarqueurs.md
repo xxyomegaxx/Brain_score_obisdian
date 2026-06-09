@@ -28,15 +28,19 @@ Mesures biologiques ou d'imagerie objectives associées à des phénotypes clini
 - [[Lawn2024]] — Cherche des biomarqueurs transdiagnostiques liant systèmes de neurotransmetteurs et connectivité fonctionnelle déviante.
 - [[Lawrence2021]] — Compare quatre modèles dMRI pour déterminer quelles métriques captent le plus sensiblement les effets d'âge et de sexe.
 - [[LawryAguila2022]] — Identifie 43–63 régions (notamment amygdale et hippocampe) qui séparent significativement témoins et cohortes pathologiques.
+- [[Lin2024]] — Déviations de connectivité distinguant des sous-groupes et corrélées aux symptômes.
 - [[Lv2021]] — Cartographie quelles régions/faisceaux dévient pour distinguer patients schizophrènes et sains, montrant l'inconstance des loci.
 - [[Marquand2016]] — Relie les déviations cérébrales à des dimensions symptomatiques spécifiques (hyperactivité du TDAH).
 - [[Marquand2019]] — Positionne la modélisation normative comme outil pour des biomarqueurs individualisés parsant l'hétérogénéité clinique.
 - [[Mito2025]] — Vise des biomarqueurs IRM quantitatifs diagnostiques (lésions FCD) et prédictifs (issue thérapeutique).
 - [[OliveiraSaraiva2023]] — Identifie des paires de réseaux fonctionnels dont la connectivité distingue SCZ, BD et TDAH.
 - [[Parker2025]] — Les centiles régionaux servent de biomarqueurs d'atrophie corrélés à la cognition et au tau, discriminant l'Alzheimer.
+- [[Pinaya2019]] — Patterns structurels anormaux distinguant patients (SCZ, ASD) des contrôles.
 - [[Rutherford2022]] — Cherche des patterns régionaux de déviation distinguant troubles psychiatriques et témoins.
 - [[Rutherford2022b]] — Positionne les déviations normatives comme marqueurs individuels face aux approches cas-témoins.
+- [[Shao2024]] — Cartes de probabilité normative localisant des anomalies hétérogènes en dépression.
 - [[Verdi2024]] — Le taux de changement du tOC sert de biomarqueur d'atrophie corrélé à la cognition, l'amyloïde, la tau et l'APOE.
+- [[Wiegert2025]] — Déviations structurelles croissant avec la sévérité des symptômes et généralisant entre cohortes.
 - [[Wolfers2018]] — Cherche des biomarqueurs cérébraux individuels en montrant que la moyenne de groupe masque les anomalies réelles.
 - [[Wolfers2020]] — Cartographie les régions déviantes distinguant le TDAH des sujets sains (cervelet, hippocampe) au niveau du groupe et de l'individu.
 - [[Xie2025]] — Cherche des métriques fonctionnelles régionales distinguant l'épilepsie temporale des témoins et prédisant l'issue chirurgicale.

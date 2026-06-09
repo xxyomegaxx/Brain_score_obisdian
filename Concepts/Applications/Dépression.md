@@ -11,3 +11,5 @@ Trouble dépressif majeur (TDM) : trouble psychiatrique caractérisé par une hu
 ## Papiers
 - [[Jing2023]] — Cible le sous-typage de la dépression majeure première-épisode jamais traitée (FEDN-MDD).
 - [[Kia2020]] — Déviations corticales détectant significativement la dépression majeure (MDD) via l'AUC.
+- [[Shao2024]] — Diagnostic individualisé et prédiction de la réponse au traitement antidépresseur.
+- [[Wiegert2025]] — Déviations structurelles liées à la sévérité dépressive (PHQ-9).
