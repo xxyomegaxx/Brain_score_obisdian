@@ -18,6 +18,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 5
+biomarqueur: "Candidat"
 methode_detail:
   - "[[GPR]]"
 modalite_detail:
@@ -72,6 +73,13 @@ Niveau · but · corrélé/comparé à : **par région** — cartes individuelle
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : schizophrénie (déficits frontaux, temporaux, cérébelleux) et trouble bipolaire (déficits surtout cérébelleux). Les profils étant individuels, l'approche soutient une stratification et une médecine de précision plutôt qu'un biomarqueur de groupe unique.
+
+## Biomarqueur identifié ?
+**Verdict : Candidat**
+
+Cartes de déviation voxelwise individualisées (régression par processus gaussien) en schizophrénie/trouble bipolaire. Les déviations extrêmes sont très hétérogènes — moins de 2% des patients partagent une anomalie au même endroit — donc aucune région universelle. Différence de groupe quantitative dans la charge de déviations extrêmes (SCZ 0,9% des voxels vs contrôles 0,23%, chi2 = 219,67, p<.001), liée a la cognition. L'article conclut toutefois qu'aucun biomarqueur individuel robuste n'est établi (pas de classifieur validé) ; le cadre de déviation est proposé comme voie.
+
+> « patients with schizophrenia had a higher percentage of extreme negative deviations across voxels (0.9% of voxels) compared with healthy individuals (0.23% of voxels, P < .001) »
 
 ## Mes réflexions
 *(à compléter par moi)*

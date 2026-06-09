@@ -19,6 +19,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 5
+biomarqueur: "Computationnel"
 methode_detail:
   - "[[Warped BLR]]"
 modalite_detail:
@@ -79,6 +80,13 @@ Niveau · but · corrélé/comparé à :
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : suivi individualisé de la trajectoire d'atrophie en AD ; le tOC et les cartes régionales pourraient servir d'outil pronostique (risque de conversion MCI→AD) et de mesure de progression pour les essais cliniques, là où les statistiques de groupe masquent l'hétérogénéité inter-patients.
+
+## Biomarqueur identifié ?
+**Verdict : Computationnel**
+
+Biomarqueur computationnel/personnalisé en Alzheimer : a partir de cartes de déviation normatives, un décompte individuel d'outliers (total outlier count, tOC) est dérivé — profil multivarié sans région universelle. Le tOC augmente dans le temps chez les patients AD et chez les sujets MCI évoluant vers l'AD (r = 0,38, p = 9,0x10^-13), et son taux de variation corrèle avec la cognition, les marqueurs amyloïde/tau et l'allèle APOE e4. Métrique de déviation individualisée prédictive et validée.
+
+> « Increased tOC over time (i.e., accumulation of outliers) was observed in the AD group (r = 0.38, p = 9.0 x 10^-13) »
 
 ## Mes réflexions
 *(à compléter par moi)*

@@ -19,6 +19,7 @@ type_irm:
   - "[[Fonctionnel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 5
+biomarqueur: "Candidat"
 methode_detail:
   - "[[GPR]]"
   - "[[EVS]]"
@@ -77,6 +78,13 @@ Niveau · but · corrélé/comparé à : (a) par région → localisation des r�
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : TDAH — spécificité pour la dimension hyperactivité (et non l'inattention) ; met en évidence une hétérogénéité mécanistique où un même symptôme provient soit de l'extrême d'un axe normal, soit de déviations idiosyncrasiques.
+
+## Biomarqueur identifié ?
+**Verdict : Candidat**
+
+Article fondateur introduisant la modélisation normative (régression par processus gaussien) pour analyser l'hétérogénéité au niveau individuel, avec prédictions par sujet. Démonstration de preuve de concept dans une cohorte saine (N=491) reliant impulsivité-trait et activité de récompense : l'amplitude de déviation (outlier) relie a des symptômes TDAH spécifiques (hyperactivité, pas inattention). Cadre proposé avec preuve préliminaire, sans biomarqueur clinique validé (pas d'AUC diagnostique).
+
+> « the degree of deviation (outlier magnitude) relates to specific attention-deficit/hyperactivity disorder symptoms (hyperactivity, but not inattention) on the basis of individualized patterns of abnormality »
 
 ## Mes réflexions
 *(à compléter par moi)*

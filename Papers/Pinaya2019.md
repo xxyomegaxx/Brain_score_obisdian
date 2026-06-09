@@ -18,6 +18,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Moyenne]]"
 pertinence: 4
+biomarqueur: "Computationnel"
 methode_detail:
   - "[[AE normatif]]"
 modalite_detail:
@@ -71,6 +72,13 @@ Niveau · but · corrélé/comparé à : niveaux **global par sujet** et **par r
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : schizophrénie et autisme — identification de patterns structurels anormaux au niveau individuel.
+
+## Biomarqueur identifié ?
+**Verdict : Computationnel**
+
+Biomarqueur computationnel/personnalisé : un autoencodeur profond entraîné sur des contrôles sains produit, par sujet, une métrique de déviation (erreur de reconstruction) — profil multivarié sans région universelle, déviations hétérogènes. Cette métrique normative discrimine quantitativement les patients des contrôles (Cliff's delta = 0,41 en schizophrénie, 0,28 en autisme ; p<=.001) et atteint une AUC-ROC de 0,707 (SCZ) et 0,639 (ASD), supérieure au SVM, répliquée sur deux jeux indépendants (NUSDAST, ABIDE).
+
+> « the deviation metric was significantly higher for the SCZ groups than the corresponding HC groups with the Mann-Whitney U test presenting a statistically significant difference (p = .001) »
 
 ## Mes réflexions
 *(à compléter par moi)*

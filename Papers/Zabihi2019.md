@@ -19,6 +19,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 4
+biomarqueur: "Candidat"
 methode_detail:
   - "[[GPR]]"
 modalite_detail:
@@ -74,6 +75,13 @@ Niveau · but · corrélé/comparé à : (i) **Par région** — cartes Z seuill
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : empreintes neurobiologiques individualisées en ASD orientant vers la médecine de précision ; déviation corrélée à la sévérité des comportements répétitifs et de la communication sociale.
+
+## Biomarqueur identifié ?
+**Verdict : Candidat**
+
+Modélisation normative de l'épaisseur corticale en autisme produisant, par sujet, des cartes individualisées d'atypicité ; anomalies hétérogènes avec peu de chevauchement spatial, sans région universelle. Preuve discriminante préliminaire : les 15 sujets les plus atypiques étaient tous TSA, et les déviations globales corrèlent avec les scores symptomatiques ADOS-2. Pas de performance discriminative validée (pas d'AUC).
+
+> « The 15 subjects with the most atypical anatomy all had ASD, which is extremely unlikely to occur by chance »
 
 ## Mes réflexions
 *(à compléter par moi)*
