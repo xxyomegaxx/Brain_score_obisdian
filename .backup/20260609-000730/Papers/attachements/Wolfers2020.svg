@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <style>
+    .title{font-size:15px;font-weight:700;fill:#fff}
+    .body{font-size:12.5px;fill:#fff}
+    .lbl{font-size:12px;fill:#334155}
+    .leg{font-size:12px;fill:#475569}
+    .edge{stroke:#94a3b8;stroke-width:2;fill:none}
+    .dash{stroke:#94a3b8;stroke-width:2;stroke-dasharray:6 5;fill:none}
+  </style>
+
+  <!-- Legend -->
+  <rect x="470" y="18" width="270" height="64" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+  <rect x="484" y="32" width="16" height="16" rx="3" fill="#0d9488"/>
+  <text x="508" y="45" class="leg">teal = niveau du score</text>
+  <rect x="484" y="56" width="16" height="16" rx="3" fill="#fb7185"/>
+  <text x="508" y="69" class="leg">corail = finalité du score</text>
+
+  <!-- Trunk edges -->
+  <line x1="240" y1="162" x2="240" y2="198" class="edge"/>
+  <line x1="240" y1="298" x2="240" y2="334" class="edge"/>
+  <line x1="240" y1="430" x2="240" y2="470" class="edge"/>
+
+  <!-- Data input (blue) -->
+  <rect x="75" y="66" width="330" height="96" rx="10" fill="#2563eb"/>
+  <text x="90" y="88" class="title">Données d'entrée</text>
+  <text class="body"><tspan x="90" y="108">Features (y) : volume de matière grise voxel-à-voxel</tspan><tspan x="90" y="124">(VBM, T1 MPRAGE 1 mm³, SPM12 + DARTEL).</tspan><tspan x="90" y="140">Covariables (x) : âge (modèle à travers la vie).</tspan><tspan x="90" y="156">Effectifs exacts non rapportés.</tspan></text>
+
+  <!-- Normative model (purple) -->
+  <rect x="75" y="198" width="330" height="100" rx="10" fill="#7c3aed"/>
+  <text x="90" y="220" class="title">Modélisation normative</text>
+  <text class="body"><tspan x="90" y="240">Régression par processus gaussien (GPR),</tspan><tspan x="90" y="256">bayésienne non-paramétrique (cadre Marquand 2016).</tspan><tspan x="90" y="272">Plage normative saine + adultes TDAH persistant</tspan><tspan x="90" y="288">(cohorte IMpACT). Validation non rapportée.</tspan></text>
+
+  <!-- Deviant scores (amber) -->
+  <rect x="75" y="334" width="330" height="96" rx="10" fill="#d97706"/>
+  <text x="90" y="356" class="title">Scores déviants</text>
+  <text class="body"><tspan x="90" y="376">z-score par voxel ; la confiance prédictive de la GPR</tspan><tspan x="90" y="392">sert à normaliser l'écart.</tspan><tspan x="90" y="408">Déviations extrêmes (surtout infra-normales) ;</tspan><tspan x="90" y="424">seuil de centile exact non rapporté.</tspan></text>
+
+  <!-- Teal root: Par région -->
+  <rect x="75" y="470" width="330" height="84" rx="10" fill="#0d9488"/>
+  <text x="90" y="492" class="title">Par région</text>
+  <text class="body"><tspan x="90" y="512">Déviations cartographiées au niveau</tspan><tspan x="90" y="528">voxel/région sur le cerveau entier,</tspan><tspan x="90" y="544">pour localiser et comparer les atteintes.</tspan></text>
+
+  <!-- leaves -->
+  <line x1="240" y1="554" x2="240" y2="586" class="edge"/>
+  <rect x="95" y="586" width="290" height="58" rx="10" fill="#fb7185"/>
+  <text x="110" y="607" class="title">Localisation</text>
+  <text class="body"><tspan x="110" y="626">Où se situent les déviations dans</tspan><tspan x="110" y="641">le cerveau de chaque patient.</tspan></text>
+
+  <line x1="240" y1="644" x2="240" y2="672" class="edge"/>
+  <rect x="95" y="672" width="290" height="62" rx="10" fill="#fb7185"/>
+  <text x="110" y="693" class="title">Détection d'atypies</text>
+  <text class="body"><tspan x="110" y="712">Déviations extrêmes fréquentes mais</tspan><tspan x="110" y="728">propres à chaque patient TDAH.</tspan></text>
+
+  <line x1="240" y1="734" x2="240" y2="762" class="edge"/>
+  <rect x="95" y="762" width="290" height="66" rx="10" fill="#fb7185"/>
+  <text x="110" y="783" class="title">Comparaison de groupes</text>
+  <text class="body"><tspan x="110" y="802">Chevauchement &gt; 2 % entre patients</tspan><tspan x="110" y="818">dans de rares loci ; en moyenne MG</tspan><tspan x="110" y="833" font-size="11.5px">réduite cervelet/hippocampe vs sains.</tspan></text>
+
+  <!-- application clinique (dashed) -->
+  <path class="dash" d="M385,690 L470,690 L470,720"/>
+  <rect x="430" y="720" width="300" height="150" rx="12" class="dash"/>
+  <text x="448" y="746" class="lbl" font-weight="700">Application clinique</text>
+  <text class="lbl"><tspan x="448" y="768">Le « patient TDAH moyen »</tspan><tspan x="448" y="786">des analyses cas-témoins masque</tspan><tspan x="448" y="804">l'hétérogénéité inter-individuelle.</tspan><tspan x="448" y="822">Plaide pour une caractérisation</tspan><tspan x="448" y="840">individualisée de la biologie cérébrale</tspan><tspan x="448" y="858">(médecine de précision, sous-typage).</tspan></text>
+</svg>

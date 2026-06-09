@@ -1,0 +1,124 @@
+<svg viewBox="0 0 820 1140" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .box{cursor:pointer;}
+      .box:hover rect, .box:hover .frame{filter:brightness(1.05);stroke-width:2.5;}
+      .ttl{font-weight:700;font-size:14px;}
+      .ln{font-size:11.5px;}
+      .edge{stroke:#94a3b8;stroke-width:1.6;fill:none;marker-end:url(#arw);}
+    </style>
+    <script type="text/javascript"><![CDATA[
+      function sendPrompt(t){ try{ if(window.parent) window.parent.postMessage({type:'prompt',text:t},'*'); }catch(e){} }
+    ]]></script>
+  </defs>
+
+  <rect width="820" height="1140" fill="#ffffff"/>
+
+  <!-- Légende -->
+  <g transform="translate(560,16)">
+    <rect width="244" height="58" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="12" y="14" width="16" height="12" rx="3" fill="#14b8a6"/>
+    <text x="36" y="24" class="ln" fill="#334155">teal = niveau du score</text>
+    <rect x="12" y="34" width="16" height="12" rx="3" fill="#fb7185"/>
+    <text x="36" y="44" class="ln" fill="#334155">corail = finalité du score</text>
+  </g>
+
+  <!-- TRONC : Données d'entrée -->
+  <g class="box" onclick="sendPrompt('Détaille l’étape Données d’entrée du papier Rutherford 2022')">
+    <rect x="210" y="20" width="320" height="34" rx="9" fill="#3b82f6"/>
+    <text x="370" y="42" text-anchor="middle" class="ttl" fill="#fff">Données d'entrée</text>
+  </g>
+
+  <g class="box" onclick="sendPrompt('Quelles sont les features (y) modélisées dans Rutherford 2022 ?')">
+    <rect x="70" y="78" width="290" height="96" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="84" y="98" class="ttl" fill="#1e3a8a">Features (y)</text>
+    <text x="84" y="118" class="ln" fill="#1e3a8a">Épaisseur corticale + volumes sous-corticaux</text>
+    <text x="84" y="136" class="ln" fill="#1e3a8a">Niveau : par parcelle, atlas Destrieux (188 ROI)</text>
+    <text x="84" y="154" class="ln" fill="#1e3a8a">Extraites via Freesurfer v6.0</text>
+  </g>
+  <g class="box" onclick="sendPrompt('Quelles covariables (x) sont utilisées dans Rutherford 2022 ?')">
+    <rect x="380" y="78" width="290" height="96" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="394" y="98" class="ttl" fill="#1e3a8a">Covariables (x)</text>
+    <text x="394" y="118" class="ln" fill="#1e3a8a">Âge, sexe, site (effets fixes)</text>
+    <text x="394" y="136" class="ln" fill="#1e3a8a">Niveau : sujet</text>
+    <text x="394" y="154" class="ln" fill="#1e3a8a">Âge non-linéaire : B-spline cubique (5 nœuds)</text>
+  </g>
+  <path class="edge" d="M300,54 L215,78"/>
+  <path class="edge" d="M440,54 L525,78"/>
+  <path class="edge" d="M215,174 C215,196 360,196 365,210"/>
+  <path class="edge" d="M525,174 C525,196 380,196 375,210"/>
+
+  <!-- Modélisation normative -->
+  <g class="box" onclick="sendPrompt('Explique la modélisation normative (Warped BLR) de Rutherford 2022')">
+    <rect x="180" y="212" width="380" height="118" rx="10" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="196" y="234" class="ttl" fill="#5b21b6">Modélisation normative</text>
+    <text x="196" y="254" class="ln" fill="#5b21b6">Warped BLR (régression linéaire bayésienne)</text>
+    <text x="196" y="272" class="ln" fill="#5b21b6">Warping sinarcsinh (SHASH) → non-gaussianité</text>
+    <text x="196" y="290" class="ln" fill="#5b21b6">PCNtoolkit v0.20 ; N=58 836, 82 sites, âges 2–100</text>
+    <text x="196" y="308" class="ln" fill="#5b21b6">Validation hors-éch. + QC manuel (N=24 354)</text>
+    <text x="196" y="324" class="ln" fill="#5b21b6">Variance expliquée jusqu'à 80 % hors-échantillon</text>
+  </g>
+  <path class="edge" d="M370,330 L370,352"/>
+
+  <!-- Scores déviants -->
+  <g class="box" onclick="sendPrompt('Comment les scores de déviation (Z) sont-ils définis dans Rutherford 2022 ?')">
+    <rect x="180" y="354" width="380" height="112" rx="10" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="196" y="376" class="ttl" fill="#92400e">Scores déviants</text>
+    <text x="196" y="396" class="ln" fill="#92400e">Z = (y − ŷ) / √(σ²_d + σ²*_d)  (éq. 2)</text>
+    <text x="196" y="414" class="ln" fill="#92400e">Combine erreur de prédiction + incertitude modèle</text>
+    <text x="196" y="432" class="ln" fill="#92400e">Direction : signé (positif = plus épais / plus grand)</text>
+    <text x="196" y="450" class="ln" fill="#92400e">Seuils extrêmes : Z &gt; 2 et Z &lt; −2</text>
+  </g>
+  <path class="edge" d="M370,466 L370,500"/>
+
+  <!-- BRANCHE teal : Par région -->
+  <g class="box" onclick="sendPrompt('Comment le niveau Par région est-il exploité dans Rutherford 2022 ?')">
+    <rect x="200" y="502" width="340" height="92" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+    <text x="216" y="524" class="ttl" fill="#0f766e">Niveau — Par région</text>
+    <text x="216" y="544" class="ln" fill="#0f766e">Z calculé pour chaque parcelle (188 ROI)</text>
+    <text x="216" y="562" class="ln" fill="#0f766e">Cartes de déviation individuelles, pleine résolution</text>
+    <text x="216" y="580" class="ln" fill="#0f766e">% de sujets déviants par région (par groupe)</text>
+  </g>
+  <path class="edge" d="M370,594 L370,624"/>
+
+  <g class="box" onclick="sendPrompt('Localisation des déviations dans Rutherford 2022 : détaille')">
+    <rect x="210" y="626" width="320" height="74" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="226" y="647" class="ttl" fill="#9f1239">Finalité — Localisation</text>
+    <text x="226" y="667" class="ln" fill="#9f1239">Identifie les régions atypiques propres à chaque groupe</text>
+    <text x="226" y="685" class="ln" fill="#9f1239">Cartes de déviation extrêmes (Fig. 2B–C)</text>
+  </g>
+  <path class="edge" d="M370,700 L370,724"/>
+
+  <g class="box" onclick="sendPrompt('Comparaison de groupes (cas-témoins) dans Rutherford 2022 : détaille')">
+    <rect x="210" y="726" width="320" height="84" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="226" y="747" class="ttl" fill="#9f1239">Finalité — Comparaison de groupes</text>
+    <text x="226" y="767" class="ln" fill="#9f1239">Tests cas-témoins sur Z vs données brutes</text>
+    <text x="226" y="785" class="ln" fill="#9f1239">Seuil FDR p &lt; 0,05 (Benjamini-Hochberg)</text>
+    <text x="226" y="803" class="ln" fill="#9f1239">Effets souvent plus forts sur les scores Z</text>
+  </g>
+  <path class="edge" d="M370,810 L370,834"/>
+
+  <g class="box" onclick="sendPrompt('Détection d’atypies (déviations extrêmes) dans Rutherford 2022 : détaille')">
+    <rect x="210" y="836" width="320" height="84" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="226" y="857" class="ttl" fill="#9f1239">Finalité — Détection d'atypies</text>
+    <text x="226" y="877" class="ln" fill="#9f1239">Comptage des déviations extrêmes par sujet</text>
+    <text x="226" y="895" class="ln" fill="#9f1239">Positif : Z &gt; 2 ; négatif : Z &lt; −2</text>
+    <text x="226" y="913" class="ln" fill="#9f1239">% d'individus déviants par région et par groupe</text>
+  </g>
+  <path class="edge" d="M370,920 L370,956"/>
+
+  <!-- Application clinique (pointillés) -->
+  <g class="box" onclick="sendPrompt('Quelle est l’application clinique dans Rutherford 2022 ?')">
+    <rect class="frame" x="150" y="958" width="440" height="118" rx="12" fill="#f8fafc" stroke="#475569" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="370" y="982" text-anchor="middle" class="ttl" fill="#1e293b">Application clinique</text>
+    <text x="370" y="1004" text-anchor="middle" class="ln" fill="#334155">Échantillon transdiagnostique N=1985 (24 sites)</text>
+    <text x="370" y="1024" text-anchor="middle" class="ln" fill="#334155">ADHD · ASD · BD · psychose précoce · MDD · SZ</text>
+    <text x="370" y="1044" text-anchor="middle" class="ln" fill="#334155">Patterns de déviation distincts selon le trouble</text>
+    <text x="370" y="1064" text-anchor="middle" class="ln" fill="#334155">Vers une décision clinique personnalisée</text>
+  </g>
+
+  <text x="20" y="1110" class="ln" fill="#94a3b8">Boîtes cliquables — touchez un nœud pour l'explorer en détail.</text>
+</svg>

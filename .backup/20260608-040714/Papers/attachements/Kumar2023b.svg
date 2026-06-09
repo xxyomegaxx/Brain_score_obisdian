@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 960" role="img" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+<title>Arborescence du pipeline mmVAE normatif pour Alzheimer</title>
+<desc>Tronc lineaire entree vers modele vers scores, puis arborescence par niveau de score (teal) et finalite (corail), aboutissant a l application clinique.</desc>
+<style>
+  .th{font-size:14px;font-weight:600}
+  .ts{font-size:12px;font-weight:400}
+  .b-blue{fill:#E6F1FB;stroke:#185FA5}.x-blue{fill:#0C447C}.y-blue{fill:#185FA5}
+  .b-purple{fill:#EEEDFE;stroke:#534AB7}.x-purple{fill:#26215C}.y-purple{fill:#534AB7}
+  .b-amber{fill:#FAEEDA;stroke:#854F0B}.x-amber{fill:#633806}.y-amber{fill:#854F0B}
+  .b-teal{fill:#E1F5EE;stroke:#0F6E56}.x-teal{fill:#04342C}.y-teal{fill:#0F6E56}
+  .b-coral{fill:#FAECE7;stroke:#993C1D}.x-coral{fill:#4A1B0C}.y-coral{fill:#993C1D}
+  .b-neutral{fill:#F1EFE8;stroke:#888780}.x-neutral{fill:#2C2C2A}.y-neutral{fill:#5F5E5A}
+  .arr{stroke:#73726c;stroke-width:1.5;fill:none}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#73726c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect x="45" y="14" width="14" height="14" rx="3" class="b-teal" stroke-width="0.5"/>
+<text class="ts x-neutral" x="66" y="21" dominant-baseline="central">teal = niveau du score</text>
+<rect x="250" y="14" width="14" height="14" rx="3" class="b-coral" stroke-width="0.5"/>
+<text class="ts x-neutral" x="271" y="21" dominant-baseline="central">corail = finalite du score</text>
+
+<rect x="200" y="45" width="280" height="62" rx="8" class="b-blue" stroke-width="0.5"/>
+<text class="th x-blue" x="214" y="67" dominant-baseline="central">Donnees d'entree</text>
+<text class="ts y-blue" x="214" y="85" dominant-baseline="central">Volumes regionaux (FreeSurfer v5.1)</text>
+<text class="ts y-blue" x="214" y="99" dominant-baseline="central">~115 regions cerebrales</text>
+
+<line x1="340" y1="107" x2="200" y2="133" class="arr" marker-end="url(#arrow)"/>
+<line x1="340" y1="107" x2="497" y2="133" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="45" y="135" width="285" height="110" rx="8" class="b-blue" stroke-width="0.5"/>
+<text class="th x-blue" x="59" y="157" dominant-baseline="central">Features (y)</text>
+<text class="ts y-blue" x="59" y="175" dominant-baseline="central">Volumes regionaux normalises (ICV)</text>
+<text class="ts y-blue" x="59" y="193" dominant-baseline="central">Niveau : par region ; MinMax [0,1]</text>
+<text class="ts y-blue" x="59" y="211" dominant-baseline="central">T1 : 64 corticales + 31 sous-cort.</text>
+<text class="ts y-blue" x="59" y="229" dominant-baseline="central">T2 : 16 hippocampiques</text>
+
+<rect x="355" y="135" width="285" height="110" rx="8" class="b-blue" stroke-width="0.5"/>
+<text class="th x-blue" x="369" y="157" dominant-baseline="central">Covariables (x)</text>
+<text class="ts y-blue" x="369" y="175" dominant-baseline="central">Age : one-hot 44 pos. (47-91 ans)</text>
+<text class="ts y-blue" x="369" y="193" dominant-baseline="central">Sexe : one-hot 2 pos.</text>
+<text class="ts y-blue" x="369" y="211" dominant-baseline="central">Effets non-lin. : via le reseau</text>
+<text class="ts y-blue" x="369" y="229" dominant-baseline="central">Conditionne les decodeurs</text>
+
+<line x1="187" y1="245" x2="320" y2="273" class="arr" marker-end="url(#arrow)"/>
+<line x1="497" y1="245" x2="360" y2="273" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="190" y="275" width="300" height="110" rx="8" class="b-purple" stroke-width="0.5"/>
+<text class="th x-purple" x="204" y="297" dominant-baseline="central">Modelisation normative</text>
+<text class="ts y-purple" x="204" y="315" dominant-baseline="central">mmVAE : encod./decod. par modalite</text>
+<text class="ts y-purple" x="204" y="333" dominant-baseline="central">Fusion latente : Product-of-Experts</text>
+<text class="ts y-purple" x="204" y="351" dominant-baseline="central">Latent = 64 ; FC 512-256-128-64</text>
+<text class="ts y-purple" x="204" y="369" dominant-baseline="central">9633 HC (UKB), fine-tune sur ADNI</text>
+
+<line x1="340" y1="385" x2="340" y2="408" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="190" y="410" width="300" height="110" rx="8" class="b-amber" stroke-width="0.5"/>
+<text class="th x-amber" x="204" y="432" dominant-baseline="central">Scores deviants</text>
+<text class="ts y-amber" x="204" y="450" dominant-baseline="central">Z = (d - mu_norm) / sigma_norm</text>
+<text class="ts y-amber" x="204" y="468" dominant-baseline="central">d = |volume orig. - reconstruit|</text>
+<text class="ts y-amber" x="204" y="486" dominant-baseline="central">Ref. : HC validation held-out</text>
+<text class="ts y-amber" x="204" y="504" dominant-baseline="central">Seuil : p &lt; 0.05, correction FDR</text>
+
+<line x1="320" y1="520" x2="190" y2="558" class="arr" marker-end="url(#arrow)"/>
+<line x1="360" y1="520" x2="500" y2="558" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="45" y="560" width="280" height="84" rx="8" class="b-teal" stroke-width="0.5"/>
+<text class="th x-teal" x="59" y="582" dominant-baseline="central">Par region</text>
+<text class="ts y-teal" x="59" y="600" dominant-baseline="central">djmean : ecart moyen / region</text>
+<text class="ts y-teal" x="59" y="618" dominant-baseline="central">sur tous les patients (eq. 7)</text>
+
+<rect x="360" y="560" width="280" height="84" rx="8" class="b-teal" stroke-width="0.5"/>
+<text class="th x-teal" x="374" y="582" dominant-baseline="central">Global par sujet</text>
+<text class="ts y-teal" x="374" y="600" dominant-baseline="central">dimean : moyenne sur ~115 regions</text>
+<text class="ts y-teal" x="374" y="618" dominant-baseline="central">par patient (eq. 6)</text>
+
+<line x1="185" y1="644" x2="185" y2="670" class="arr" marker-end="url(#arrow)"/>
+<line x1="500" y1="644" x2="500" y2="670" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="45" y="672" width="280" height="64" rx="8" class="b-coral" stroke-width="0.5"/>
+<text class="th x-coral" x="59" y="694" dominant-baseline="central">Localisation</text>
+<text class="ts y-coral" x="59" y="712" dominant-baseline="central">Regions a deviation significative</text>
+<text class="ts y-coral" x="59" y="730" dominant-baseline="central">(frequence de significativite)</text>
+
+<line x1="185" y1="736" x2="185" y2="754" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="45" y="756" width="280" height="64" rx="8" class="b-coral" stroke-width="0.5"/>
+<text class="th x-coral" x="59" y="778" dominant-baseline="central">Comparaison de groupes</text>
+<text class="ts y-coral" x="59" y="796" dominant-baseline="central">Cartes regionales par stade AD</text>
+<text class="ts y-coral" x="59" y="814" dominant-baseline="central">(figure 3)</text>
+
+<rect x="360" y="672" width="280" height="64" rx="8" class="b-coral" stroke-width="0.5"/>
+<text class="th x-coral" x="374" y="694" dominant-baseline="central">Comparaison de groupes</text>
+<text class="ts y-coral" x="374" y="712" dominant-baseline="central">Stadification : pentes par stade</text>
+<text class="ts y-coral" x="374" y="730" dominant-baseline="central">paires pFDR &lt; 0.05 (figure 2)</text>
+
+<line x1="500" y1="736" x2="500" y2="754" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="360" y="756" width="280" height="64" rx="8" class="b-coral" stroke-width="0.5"/>
+<text class="th x-coral" x="374" y="778" dominant-baseline="central">Association au phenotype</text>
+<text class="ts y-coral" x="374" y="796" dominant-baseline="central">Correlation de Pearson avec</text>
+<text class="ts y-coral" x="374" y="814" dominant-baseline="central">ADAS13 et RAVLT (figure 4)</text>
+
+<line x1="185" y1="820" x2="185" y2="848" class="arr" marker-end="url(#arrow)"/>
+<line x1="500" y1="820" x2="500" y2="848" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="110" y="850" width="460" height="72" rx="8" class="b-neutral" stroke-width="0.8" stroke-dasharray="6 4"/>
+<text class="th x-neutral" x="124" y="872" dominant-baseline="central">Application clinique</text>
+<text class="ts y-neutral" x="124" y="890" dominant-baseline="central">Severite croissante par stade AD, lien a la cognition ;</text>
+<text class="ts y-neutral" x="124" y="908" dominant-baseline="central">clustering en sous-types neuroanatomiques (perspective)</text>
+</svg>

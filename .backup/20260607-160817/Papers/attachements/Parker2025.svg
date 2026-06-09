@@ -1,0 +1,113 @@
+<svg viewBox="0 0 980 980" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="980" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="60" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">Épaisseur corticale + volumes hippocampe/amygdale</text>
+  <text x="75" y="129" class="d">FreeSurfer (aparc.stats / aseg.stats) ; niveau région</text>
+  <text x="75" y="145" class="d">Appli : NACC (351), ADNI-3 (39+71), NIFD (113)</text>
+  <text x="75" y="161" class="d">Référence normative : 56 173 scans (vie entière)</text>
+
+  <rect x="530" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge, sexe (trajectoires non-linéaires GAMLSS)</text>
+  <text x="545" y="129" class="d">Volume intracrânien estimé (eTIV) — confondant</text>
+  <text x="545" y="145" class="d">Effets aléatoires spécifiques au site/scanner</text>
+  <text x="545" y="161" class="d">Niveau : sujet</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="170" x2="485" y2="192" stroke="#64748b"/>
+  <line x1="725" y1="170" x2="495" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="194" width="420" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="234" class="d">GAMLSS (cadre BrainChart, Bethlehem 2022)</text>
+  <text x="295" y="250" class="d">Un modèle par région ; ajusté âge/sexe/eTIV</text>
+  <text x="295" y="266" class="d">Estimation hors-échantillon des effets aléatoires</text>
+  <text x="295" y="282" class="d">par max. de vraisemblance (~100 sains/scanner)</text>
+  <line x1="490" y1="192" x2="490" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="326" width="380" height="86" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="346" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="366" class="d">Score de centile régional par sujet ; signé</text>
+  <text x="315" y="382" class="d">Centiles bas = atrophie ; interprétation continue</text>
+  <text x="315" y="398" class="d">Seuillage explicite non rapporté</text>
+  <line x1="490" y1="294" x2="490" y2="326" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 2 racines teal -->
+  <rect x="120" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="280" y="472" text-anchor="middle" class="t">Par région</text>
+  <text x="135" y="492" class="d">Centiles régionaux (épaisseur, volumes)</text>
+  <text x="135" y="506" class="d">Patrons spatiaux d'atrophie</text>
+
+  <rect x="540" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="700" y="472" text-anchor="middle" class="t">Global par sujet</text>
+  <text x="555" y="492" class="d">Interprétation au niveau du patient</text>
+  <text x="555" y="506" class="d">Lien aux mesures cliniques globales</text>
+
+  <line x1="430" y1="412" x2="280" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="550" y1="412" x2="700" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail gauche -->
+  <rect x="120" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="280" y="560" text-anchor="middle" class="t">Localisation</text>
+  <text x="135" y="578" class="d">Patrons distincts par phénotype DLFT</text>
+
+  <rect x="120" y="608" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="280" y="628" text-anchor="middle" class="t">Détection d'atypies</text>
+  <text x="135" y="646" class="d">Atrophie inappropriée pour l'âge (individuel)</text>
+
+  <rect x="120" y="676" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="280" y="696" text-anchor="middle" class="t">Comparaison de groupes</text>
+  <text x="135" y="714" class="d">AD vs témoins appariés ; stades</text>
+
+  <line x1="280" y1="510" x2="280" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="280" y1="588" x2="280" y2="608" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="280" y1="656" x2="280" y2="676" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail droite -->
+  <rect x="540" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="700" y="560" text-anchor="middle" class="t">Association au phénotype</text>
+  <text x="555" y="578" class="d">Centiles ↔ MMSE, stade, tau PET (ADNI-3)</text>
+
+  <rect x="540" y="608" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="700" y="628" text-anchor="middle" class="t">Prédiction</text>
+  <text x="555" y="646" class="d">Prédit cognition et captation tau temporale</text>
+
+  <line x1="700" y1="510" x2="700" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="700" y1="588" x2="700" y2="608" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="800" width="380" height="86" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="822" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="842" class="d">Alzheimer, démence frontotemporale, vieillissement</text>
+  <text x="315" y="858" class="d">Objectiver l'atrophie au-delà du « normal pour l'âge »</text>
+  <text x="315" y="874" class="d">Aide au diagnostic différentiel des démences</text>
+
+  <line x1="280" y1="724" x2="430" y2="800" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="700" y1="656" x2="550" y2="800" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

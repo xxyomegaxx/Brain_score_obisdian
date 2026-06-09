@@ -1,0 +1,101 @@
+<svg viewBox="0 0 980 940" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="940" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+  <text x="20" y="28" class="lbl">Article de revue — spécificités empiriques « non rapporté »</text>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="40" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="62" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="70" y="94" width="380" height="84" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="260" y="113" text-anchor="middle" class="t">Features (y)</text>
+  <text x="85" y="133" class="d">Features IRM quantitatives (structurelles, diffusion)</text>
+  <text x="85" y="149" class="d">Niveau : région ou voxel</text>
+  <text x="85" y="165" class="d">Pas de cohorte propre (revue) — nombres non rapportés</text>
+
+  <rect x="530" y="94" width="380" height="84" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="720" y="113" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="133" class="d">Caractéristiques cliniquement pertinentes (âge, sexe)</text>
+  <text x="545" y="149" class="d">Niveau : sujet</text>
+  <text x="545" y="165" class="d">Effets non-linéaires : non rapporté</text>
+
+  <line x1="490" y1="74" x2="260" y2="94" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="74" x2="720" y2="94" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="260" y1="178" x2="485" y2="200" stroke="#64748b"/>
+  <line x1="720" y1="178" x2="495" y2="200" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="202" width="420" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="222" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="242" class="d">Cadre générique (revue) : distribution normale d'une</text>
+  <text x="295" y="258" class="d">mesure selon une caractéristique → déviation individuelle</text>
+  <text x="295" y="274" class="d">Granularité : région ou voxel</text>
+  <text x="295" y="290" class="d">Enjeux : diversité des cohortes, harmonisation</text>
+  <line x1="490" y1="200" x2="490" y2="202" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="334" width="380" height="78" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="354" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="374" class="d">Déviation individuelle vs plage normative</text>
+  <text x="315" y="390" class="d">Niveau : par région ou voxel</text>
+  <text x="315" y="406" class="d">Direction / seuillage : non rapporté (revue)</text>
+  <line x1="490" y1="302" x2="490" y2="334" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 2 racines teal -->
+  <rect x="120" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="280" y="472" text-anchor="middle" class="t">Par région</text>
+  <text x="135" y="492" class="d">Déviations par région / voxel</text>
+  <text x="135" y="506" class="d">Cartographie d'anomalies</text>
+
+  <rect x="540" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="700" y="472" text-anchor="middle" class="t">Global par sujet</text>
+  <text x="555" y="492" class="d">Inférence individualisée</text>
+  <text x="555" y="506" class="d">au niveau du patient</text>
+
+  <line x1="430" y1="412" x2="280" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="550" y1="412" x2="700" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail gauche -->
+  <rect x="120" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="280" y="560" text-anchor="middle" class="t">Localisation</text>
+  <text x="135" y="578" class="d">Lésions épileptogènes (ex. FCD)</text>
+
+  <rect x="120" y="608" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="280" y="628" text-anchor="middle" class="t">Détection d'atypies</text>
+  <text x="135" y="646" class="d">Anomalies dépassant la norme</text>
+
+  <line x1="280" y1="510" x2="280" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="280" y1="588" x2="280" y2="608" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail droite -->
+  <rect x="540" y="540" width="320" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="700" y="560" text-anchor="middle" class="t">Prédiction</text>
+  <text x="555" y="578" class="d">Diagnostic et issue thérapeutique individualisés</text>
+
+  <line x1="700" y1="510" x2="700" y2="540" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="730" width="380" height="80" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="752" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="772" class="d">Épilepsie (focales pharmaco-résistantes)</text>
+  <text x="315" y="788" class="d">Biomarqueurs diagnostiques (FCD) et prédictifs</text>
+
+  <line x1="280" y1="656" x2="430" y2="730" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="700" y1="588" x2="550" y2="730" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

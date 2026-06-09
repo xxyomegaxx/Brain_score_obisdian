@@ -1,0 +1,143 @@
+<svg viewBox="0 0 1060 1210" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; }
+    .ttl { font-size: 15px; font-weight: 700; fill: #0f172a; }
+    .node { cursor: pointer; }
+    .node:hover rect { stroke-width: 3; }
+    .edge { stroke: #94a3b8; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- ===== Connecteurs (dessinés d'abord) ===== -->
+  <!-- entrée -> split -->
+  <path class="edge" d="M520 92 V108 H300 V120" />
+  <path class="edge" d="M520 92 V108 H740 V120" />
+  <!-- features/covariables -> rejoin -->
+  <path class="edge" d="M300 240 V268 H520 V290" />
+  <path class="edge" d="M740 240 V268 H520 V290" />
+  <!-- modèle -> scores -> teal -->
+  <path class="edge" d="M520 410 V450" />
+  <path class="edge" d="M520 570 V620" />
+  <!-- teal -> 4 feuilles -->
+  <path class="edge" d="M520 740 V762 H147 V790" />
+  <path class="edge" d="M520 740 V762 H402 V790" />
+  <path class="edge" d="M520 762 H657 V790" />
+  <path class="edge" d="M520 740 V762 H912 V790" />
+  <!-- feuilles -> application -->
+  <path class="edge" d="M147 910 V942 H520 V970" />
+  <path class="edge" d="M402 910 V942 H520 V970" />
+  <path class="edge" d="M657 910 V942 H520 V970" />
+  <path class="edge" d="M912 910 V942 H520 V970" />
+
+  <!-- ===== Tronc ===== -->
+  <!-- Données d'entrée (bleu) -->
+  <g class="node" onclick="sendPrompt('Détaille l’étape Données d’entrée du papier Jing 2023 (rs-fMRI, AAL, GIG-ICA, 20 IC).')">
+    <rect x="320" y="20" width="400" height="72" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text class="ttl" x="340" y="44">Données d'entrée</text>
+    <text class="lbl" x="340" y="64">rs-fMRI · atlas AAL (90 ROIs) · fenêtre 60 s, pas 1</text>
+    <text class="lbl" x="340" y="82">GIG-ICA → 20 composantes indépendantes (IC)</text>
+  </g>
+
+  <!-- Features (y) -->
+  <g class="node" onclick="sendPrompt('Quelles sont les features (y) du modèle normatif dans Jing 2023 ?')">
+    <rect x="120" y="120" width="360" height="120" rx="10" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text class="ttl" x="138" y="146">Features (y)</text>
+    <text class="lbl" x="138" y="168">40 mesures par sujet :</text>
+    <text class="lbl" x="138" y="186">20 efficacités globales (1 par IC)</text>
+    <text class="lbl" x="138" y="204">+ 20 coefficients de fluctuation</text>
+    <text class="lbl" x="138" y="222">niveau : par réseau · 91 patients FEDN-MDD</text>
+  </g>
+
+  <!-- Covariables (x) -->
+  <g class="node" onclick="sendPrompt('Quelles covariables (x) entrent dans le modèle normatif de Jing 2023 ?')">
+    <rect x="560" y="120" width="360" height="120" rx="10" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text class="ttl" x="578" y="146">Covariables (x)</text>
+    <text class="lbl" x="578" y="168">âge (sujets de 18 à 50 ans)</text>
+    <text class="lbl" x="578" y="186">niveau : sujet</text>
+    <text class="lbl" x="578" y="204">effet non-linéaire : oui</text>
+    <text class="lbl" x="578" y="222">(terme quadratique, ordre 2)</text>
+  </g>
+
+  <!-- Modélisation normative (violet) -->
+  <g class="node" onclick="sendPrompt('Explique la modélisation normative de Jing 2023 (régression polynomiale, 10-fold CV).')">
+    <rect x="300" y="290" width="440" height="120" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text class="ttl" x="320" y="316">Modélisation normative</text>
+    <text class="lbl" x="320" y="338">régression polynomiale d'ordre 2 (âge → feature)</text>
+    <text class="lbl" x="320" y="356">granularité : 1 modèle par feature (40 au total)</text>
+    <text class="lbl" x="320" y="374">validation : 10-fold CV (modèle d'agrégation)</text>
+    <text class="lbl" x="320" y="392">normes : 91 contrôles sains appariés</text>
+  </g>
+
+  <!-- Scores déviants (ambre) -->
+  <g class="node" onclick="sendPrompt('Comment sont calculés les scores de déviation (Z) dans Jing 2023 ?')">
+    <rect x="300" y="450" width="440" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text class="ttl" x="320" y="476">Scores déviants</text>
+    <text class="lbl" x="320" y="498">Z = |réel − 50e| / |95e − 5e| (selon l'âge)</text>
+    <text class="lbl" x="320" y="516">combine : 1 score de déviation par feature</text>
+    <text class="lbl" x="320" y="534">direction : valeur absolue (non signé)</text>
+    <text class="lbl" x="320" y="552">seuil : déviation extrême hors 5e–95e percentile</text>
+  </g>
+
+  <!-- ===== Arborescence : racine teal ===== -->
+  <g class="node" onclick="sendPrompt('Pourquoi le niveau du score est-il « par réseau » dans Jing 2023 ?')">
+    <rect x="300" y="620" width="440" height="120" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+    <text class="ttl" x="320" y="646">Niveau : par réseau</text>
+    <text class="lbl" x="320" y="668">déviations exploitées au niveau de chaque IC</text>
+    <text class="lbl" x="320" y="686">sélection forward + k-means (100 runs)</text>
+    <text class="lbl" x="320" y="704">12 features informatives issues de 10 IC</text>
+    <text class="lbl" x="320" y="722">(DMN, frontopariétal, contrôle exécutif, limbiques…)</text>
+  </g>
+
+  <!-- ===== Feuilles corail ===== -->
+  <g class="node" onclick="sendPrompt('Comment Jing 2023 détecte-t-il les atypies (déviations extrêmes) ?')">
+    <rect x="30" y="790" width="235" height="120" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+    <text class="ttl" x="46" y="816">Détection d'atypies</text>
+    <text class="lbl" x="46" y="838">patients à déviations</text>
+    <text class="lbl" x="46" y="856">extrêmes, hors plage</text>
+    <text class="lbl" x="46" y="874">normative (5e–95e pct)</text>
+  </g>
+
+  <g class="node" onclick="sendPrompt('Décris la stratification en sous-types de Jing 2023 (k-means).')">
+    <rect x="285" y="790" width="235" height="120" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+    <text class="ttl" x="301" y="816">Stratification</text>
+    <text class="lbl" x="301" y="838">k-means k=2 sur 89 patients</text>
+    <text class="lbl" x="301" y="856">sous-type I = 14 · II = 75</text>
+    <text class="lbl" x="301" y="874">silhouette 0.461</text>
+    <text class="lbl" x="301" y="892">stabilité moyenne 0.97</text>
+  </g>
+
+  <g class="node" onclick="sendPrompt('Quelles comparaisons de groupes (FC, VBM) fait Jing 2023 ?')">
+    <rect x="540" y="790" width="235" height="120" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+    <text class="ttl" x="556" y="816">Comparaison de groupes</text>
+    <text class="lbl" x="556" y="838">pseudo t-tests (permutation)</text>
+    <text class="lbl" x="556" y="856">sous-types vs contrôles</text>
+    <text class="lbl" x="556" y="874">FC intra-IC + VBM</text>
+    <text class="lbl" x="556" y="892">matière grise</text>
+  </g>
+
+  <g class="node" onclick="sendPrompt('À quel phénotype les sous-types de Jing 2023 sont-ils associés ?')">
+    <rect x="795" y="790" width="235" height="120" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+    <text class="ttl" x="811" y="816">Association au phénotype</text>
+    <text class="lbl" x="811" y="838">durée de maladie :</text>
+    <text class="lbl" x="811" y="856">I ≈ 11.75 mois vs</text>
+    <text class="lbl" x="811" y="874">II ≈ 22.1 mois (p = .03)</text>
+    <text class="lbl" x="811" y="892">sévérité dépr./anx. : NS</text>
+  </g>
+
+  <!-- ===== Application clinique (pointillés) ===== -->
+  <g class="node" onclick="sendPrompt('Quelle est la portée clinique des deux sous-types de Jing 2023 ?')">
+    <rect x="260" y="970" width="520" height="130" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="2" stroke-dasharray="7 5"/>
+    <text class="ttl" x="280" y="996">Application clinique</text>
+    <text class="lbl" x="280" y="1018">2 sous-types de FEDN-MDD à neurobiologie distincte</text>
+    <text class="lbl" x="280" y="1036">I : déviations fortes · durée courte · GM surtout ↓</text>
+    <text class="lbl" x="280" y="1054">II : déviations faibles · durée longue · GM ↑ et ↓</text>
+    <text class="lbl" x="280" y="1072">sévérité dépression/anxiété identique entre sous-types</text>
+    <text class="lbl" x="280" y="1090">→ vers sous-typage et traitements personnalisés</text>
+  </g>
+
+  <!-- ===== Légende ===== -->
+  <rect x="30" y="1140" width="22" height="22" rx="4" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+  <text class="lbl" x="60" y="1156">teal = niveau du score</text>
+  <rect x="250" y="1140" width="22" height="22" rx="4" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+  <text class="lbl" x="280" y="1156">corail = finalité du score</text>
+  <text class="lbl" x="500" y="1156" fill="#64748b">tronc : bleu (entrée) → violet (modèle) → ambre (scores)</text>
+</svg>

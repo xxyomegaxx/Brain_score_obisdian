@@ -1,0 +1,90 @@
+<svg viewBox="0 0 900 1200" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="1200" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Zabihi et al. 2024 — Représentations latentes non linéaires de task-fMRI</text>
+  <text x="450" y="56" text-anchor="middle" font-size="12" fill="#64748b">Pipeline : autoencodeur 3D → UMAP → modèle normatif HBR → latent index</text>
+
+  <!-- ====== 1. DONNÉES D'ENTRÉE (bleu) ====== -->
+  <rect x="320" y="78" width="260" height="26" rx="6" fill="#3b82f6"/>
+  <text x="450" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1 · Données d'entrée</text>
+
+  <!-- Features (y) -->
+  <rect x="40" y="118" width="380" height="116" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="56" y="140" font-size="13" font-weight="700" fill="#1e3a8a">Features (y)</text>
+  <text x="56" y="162" font-size="12.5" fill="#1e293b">Contrastes task-fMRI, cerveau entier</text>
+  <text x="56" y="182" font-size="12.5" fill="#1e293b">Niveau voxel (56×64×56, 3 mm)</text>
+  <text x="56" y="202" font-size="12.5" fill="#1e293b">~40K scans HCP · ~104K scans UKB</text>
+  <text x="56" y="222" font-size="12.5" fill="#1e293b">86 contrastes (HCP) · 5 contrastes (UKB)</text>
+
+  <!-- Covariables (x) -->
+  <rect x="480" y="118" width="380" height="116" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="496" y="140" font-size="13" font-weight="700" fill="#1e3a8a">Covariables (x)</text>
+  <text x="496" y="162" font-size="12.5" fill="#1e293b">Âge (continu) + sexe</text>
+  <text x="496" y="182" font-size="12.5" fill="#1e293b">Cibles supervisées de l'autoencodeur</text>
+  <text x="496" y="202" font-size="12.5" fill="#1e293b">Effets non linéaires modélisés via HBR</text>
+  <text x="496" y="222" font-size="12.5" fill="#1e293b">Sexe traité comme effet de batch</text>
+
+  <!-- convergence arrows -->
+  <path d="M230,234 L230,258 L430,258" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <path d="M670,234 L670,258 L470,258" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <line x1="450" y1="258" x2="450" y2="276" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ====== 2. MODÉLISATION NORMATIVE (violet) ====== -->
+  <rect x="220" y="280" width="460" height="158" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="236" y="304" font-size="14" font-weight="700" fill="#5b21b6">2 · Modélisation normative</text>
+  <text x="236" y="328" font-size="12.5" fill="#1e293b">Autoencodeur 3D conv. semi-supervisé (λ = 0,05)</text>
+  <text x="236" y="350" font-size="12.5" fill="#1e293b">puis UMAP (2 composantes) sur le latent (100 nœuds)</text>
+  <text x="236" y="372" font-size="12.5" fill="#1e293b">puis HBR : non gaussien + hétéroscédastique</text>
+  <text x="236" y="394" font-size="12.5" fill="#1e293b">Validation : 5-fold (HCP) · train/test (UKB)</text>
+  <text x="236" y="416" font-size="12.5" fill="#1e293b">n = 468 (HCP) · n = 20 781 (UKB)</text>
+
+  <line x1="450" y1="438" x2="450" y2="466" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ====== 3. SCORES DÉVIANTS (ambre) ====== -->
+  <rect x="220" y="470" width="460" height="138" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="236" y="494" font-size="14" font-weight="700" fill="#92400e">3 · Scores déviants</text>
+  <text x="236" y="518" font-size="12.5" fill="#1e293b">« Latent index » = z-score de déviation</text>
+  <text x="236" y="540" font-size="12.5" fill="#1e293b">à la normative UMAP, par composante / sujet</text>
+  <text x="236" y="562" font-size="12.5" fill="#1e293b">Combine : les 2 composantes UMAP du latent</text>
+  <text x="236" y="584" font-size="12.5" fill="#1e293b">Direction : signé (z) · Seuillage : non rapporté</text>
+
+  <line x1="450" y1="608" x2="450" y2="636" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ====== ARBORESCENCE : niveau (teal) ====== -->
+  <rect x="290" y="640" width="320" height="108" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="1.5"/>
+  <text x="306" y="664" font-size="13.5" font-weight="700" fill="#0f766e">Niveau · Global par sujet</text>
+  <text x="306" y="688" font-size="12.5" fill="#1e293b">Agrégation : latent voxel → 2 comp. UMAP</text>
+  <text x="306" y="710" font-size="12.5" fill="#1e293b">→ un index par composante, par individu</text>
+  <text x="306" y="732" font-size="12.5" fill="#1e293b">Pas de déviation par région ni par réseau</text>
+
+  <line x1="450" y1="748" x2="450" y2="776" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- feuille (corail) -->
+  <rect x="270" y="780" width="360" height="120" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="286" y="804" font-size="13.5" font-weight="700" fill="#9f1239">Finalité · Association au phénotype</text>
+  <text x="286" y="828" font-size="12.5" fill="#1e293b">Corrélation de Spearman : latent index ↔ nIDPs</text>
+  <text x="286" y="850" font-size="12.5" fill="#1e293b">Associations plus fortes que PCA / ICA / ROIs</text>
+  <text x="286" y="872" font-size="12.5" fill="#1e293b">Après contrôle de l'âge et du sexe</text>
+  <text x="286" y="894" font-size="12.5" fill="#1e293b">Manhattan plot, seuil Bonferroni</text>
+
+  <line x1="450" y1="900" x2="450" y2="930" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+
+  <!-- ====== APPLICATION CLINIQUE (pointillés) ====== -->
+  <rect x="210" y="934" width="480" height="92" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <text x="226" y="958" font-size="13.5" font-weight="700" fill="#334155">Application clinique</text>
+  <text x="226" y="982" font-size="12.5" fill="#1e293b">Biomarqueur candidat des scores cognitifs / comportementaux</text>
+  <text x="226" y="1004" font-size="12.5" fill="#1e293b">Détection d'atypies en clinique : évoquée, non réalisée ici</text>
+
+  <!-- ====== LÉGENDE ====== -->
+  <rect x="210" y="1052" width="480" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="226" y="1066" width="16" height="16" rx="3" fill="#ccfbf1" stroke="#14b8a6"/>
+  <text x="250" y="1079" font-size="12.5" fill="#334155">teal = niveau du score</text>
+  <rect x="430" y="1066" width="16" height="16" rx="3" fill="#ffe4e6" stroke="#fb7185"/>
+  <text x="454" y="1079" font-size="12.5" fill="#334155">corail = finalité du score</text>
+  <text x="226" y="1100" font-size="11.5" fill="#64748b">Tronc : bleu (entrée) → violet (modèle) → ambre (scores).</text>
+</svg>

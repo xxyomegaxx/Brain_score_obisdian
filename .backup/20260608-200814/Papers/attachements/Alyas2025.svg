@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 898" width="900" height="898" font-family="Segoe UI,Arial,sans-serif"><defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs><rect x="0" y="0" width="900" height="898" fill="#ffffff"/><text x="20" y="32" font-family="Segoe UI,Arial" font-size="14" font-weight="700" fill="#0f172a">Alyas et al. 2025 — Guide pratique de la modélisation normative en neuro-imagerie</text><g><rect x="662" y="20" width="220" height="56" rx="8" fill="#ffffff" stroke="#cbd5e1"/><rect x="672" y="32" width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/><text x="692" y="43" font-family="Segoe UI,Arial" font-size="11" fill="#1e293b">teal = niveau du score</text><rect x="672" y="52" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#fb7185"/><text x="692" y="63" font-family="Segoe UI,Arial" font-size="11" fill="#1e293b">corail = finalité du score</text></g><rect x="190.0" y="28" width="520" height="116" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="202.0" y="47" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#2563eb">Données d&#x27;entrée</text>
+<text x="202.0" y="65" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Features (y) : épaisseur corticale (surface, volume) — atlas</text>
+<text x="202.0" y="81" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Desikan-Killiany / FreeSurfer.</text>
+<text x="202.0" y="97" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Covariables (x) : âge, sexe, site du scanner.</text>
+<text x="202.0" y="113" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Exemple : 23 TLE mésial gauche + 70 témoins (dataset IDEAS) ; modèles</text>
+<text x="202.0" y="129" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">pré-entraînés.</text>
+<rect x="190.0" y="174" width="520" height="116" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="202.0" y="193" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#7c3aed">Modélisation normative</text>
+<text x="202.0" y="211" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Revue : régression linéaire, GPR, GAMLSS, régression hiérarchique</text>
+<text x="202.0" y="227" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">bayésienne (HBR).</text>
+<text x="202.0" y="243" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Modèles pré-entraînés (Brain MoNoCle, BrainChart, PCN Toolkit,</text>
+<text x="202.0" y="259" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">CentileBrain).</text>
+<text x="202.0" y="275" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Calibration sur le nouveau site avec un petit échantillon de témoins</text>
+<rect x="190.0" y="320" width="520" height="84" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="202.0" y="339" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#d97706">Scores déviants</text>
+<text x="202.0" y="357" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Z-scores / centiles par région vs distribution saine attendue.</text>
+<text x="202.0" y="373" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Robuste aux écarts démographiques (âge/sexe) entre cas et témoins.</text>
+<text x="202.0" y="389" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Direction : cartes d&#x27;anomalie individuelles (réductions/augmentations).</text>
+<line x1="450.0" y1="144" x2="450.0" y2="174" stroke="#64748b" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="450.0" y1="290" x2="450.0" y2="320" stroke="#64748b" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="450.0" y1="404" x2="450.0" y2="438" stroke="#0d9488" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="270.0" y="438" width="360" height="68" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+<text x="282.0" y="457" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#0d9488">Par région</text>
+<text x="282.0" y="475" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Cartes Z d&#x27;anomalie par ROI (cortex).</text>
+<text x="282.0" y="491" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Effets régionaux agrégés au niveau du groupe.</text>
+<line x1="450.0" y1="506" x2="450.0" y2="530" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="270.0" y="530" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="282.0" y="549" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Localisation</text>
+<text x="282.0" y="567" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Cartes d&#x27;anomalie régionales d&#x27;un sujet (ex.</text>
+<text x="282.0" y="583" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">réductions corticales en TLE gauche).</text>
+<line x1="450.0" y1="598" x2="450.0" y2="622" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="270.0" y="622" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="282.0" y="641" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Détection d&#x27;atypies</text>
+<text x="282.0" y="659" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Déviations individuelles robustes même avec</text>
+<text x="282.0" y="675" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">témoins peu nombreux/biaisés.</text>
+<line x1="450.0" y1="690" x2="450.0" y2="714" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="270.0" y="714" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="282.0" y="733" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Comparaison de groupes</text>
+<text x="282.0" y="751" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Tailles d&#x27;effet régionales (Cohen&#x27;s d) cas vs</text>
+<text x="282.0" y="767" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">témoins ; validées vs ENIGMA-épilepsie.</text>
+<line x1="450.0" y1="782" x2="450.0" y2="810" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<rect x="20" y="810" width="860" height="68" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="32" y="829" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#7c3aed">Application clinique (recommandations d&#x27;usage)</text>
+<text x="32" y="847" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Adoption responsable de modèles pré-entraînés en recherche clinique (ex. épilepsie).</text>
+<text x="32" y="863" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Recommandations : taille des témoins de calibration, écarts démographiques, contrôle de calibration.</text></svg>
