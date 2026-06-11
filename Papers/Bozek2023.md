@@ -17,6 +17,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 4
+biomarqueur: "Non"
 methode_detail:
   - "[[GAMLSS]]"
   - "[[Centiles]]"
@@ -66,6 +67,13 @@ Niveau · but · corrélé/comparé à : **par région** (marqueur hippocampique
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : aucune application clinique réalisée (étude de simulation). Portée pratique : recommandations sur la taille d'échantillon minimale et l'évaluation (biais + variance) pour quiconque construit ou utilise des modèles normatifs ; mise en garde contre l'extrapolation aux extrémités de la plage d'âge.
+
+## Biomarqueur identifié ?
+**Verdict : Non**
+
+Étude de simulation purement méthodologique : à partir de distributions vérité-terrain de volumes hippocampiques (45–80 ans), elle quantifie le compromis biais-variance de l'estimation des courbes de percentiles selon la taille d'échantillon et le type de modèle. Aucune cohorte de patients, aucun score de déviation appliqué, aucun claim discriminatif réalisé : le livrable est une recommandation d'évaluation des modèles normatifs.
+
+> « In this paper we assess the performance of fitting methods from the perspective of clinical applications and investigate the influence of the sample size. »
 
 ## Mes réflexions
 *(à compléter par moi)*

@@ -18,6 +18,7 @@ type_irm:
   - "[[Structurel]]"
 interpretabilite: "[[Haute]]"
 pertinence: 5
+biomarqueur: "Computationnel"
 methode_detail:
   - "[[GPR]]"
 modalite_detail:
@@ -74,6 +75,13 @@ Niveau · but · corrélé/comparé à : niveau par région (structure + vertex,
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : éclaire la pléiotropie des CNV (pourquoi tous augmentent le risque d'ASD et/ou SZ) ; dimension latente partagée (axe ganglions de la base ↔ système limbique) entre CNV et troubles psychiatriques (ASD, SZ, BD, MDD, OCD, ADHD).
+
+## Biomarqueur identifié ?
+**Verdict : Computationnel**
+
+Modèle normatif (GPR, W-scores) appliqué à 11 CNV : les altérations sous-corticales sont spécifiques à chaque CNV et hétérogènes (effets opposés ganglions de la base vs limbique), sans région universelle, et sont intégrées en une dimension latente multivariée commune. Résultat quantitatif réalisé : 9/11 CNV altèrent le volume d'au moins une structure sous-corticale, et les tailles d'effet cérébrales corrèlent avec les effets sur la cognition et le risque d'ASD/SZ. Profil multivarié personnalisé, donc biomarqueur computationnel.
+
+> « Nine of the 11 CNVs affected volume of at least one subcortical structure. The hippocampus and amygdala were affected by five CNVs. Effect sizes of CNVs on subcortical volume, thickness and local surface area were correlated with their previously reported effect sizes on cognition and risk for ASD and SZ. »
 
 ## Mes réflexions
 *(à compléter par moi)*

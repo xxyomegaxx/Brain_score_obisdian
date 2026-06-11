@@ -18,6 +18,7 @@ type_irm:
   - "[[Diffusion]]"
 interpretabilite: "[[Haute]]"
 pertinence: 3
+biomarqueur: "Non"
 methode_detail:
   - "[[Polynômes fractionnaires]]"
   - "[[Régression quantile]]"
@@ -70,6 +71,13 @@ Niveau · but · corrélé/comparé à : niveau par région ; usage réalisé = 
 
 ## Application clinique
 Lien avec symptômes / diagnostics / sous-groupes : courbes normatives destinées à permettre, à l'avenir, le repérage d'individus à WM anormale pour leur âge/sexe et le ciblage des phénotypes les plus atteints (maladies neurodégénératives, ex. Alzheimer) — non réalisé dans ce papier.
+
+## Biomarqueur identifié ?
+**Verdict : Non**
+
+Étude de référence normative sur 15 628 adultes UK Biobank : elle caractérise les effets d'âge et de sexe sur la microstructure de substance blanche et fournit des courbes centiles sexe-stratifiées par région. Aucun score de déviation par sujet n'est calculé ni appliqué, et aucune discrimination d'une population clinique n'est réalisée ; l'identification d'individus anormaux n'est évoquée que comme perspective future. Livrable = référentiel, pas un biomarqueur réalisé.
+
+> « such normative white matter reference curves may allow future aging work to identify individuals with the most severe neural pathology »
 
 ## Mes réflexions
 *(à compléter par moi)*
