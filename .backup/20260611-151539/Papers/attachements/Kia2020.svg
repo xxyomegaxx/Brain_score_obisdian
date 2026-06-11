@@ -1,0 +1,98 @@
+<svg viewBox="0 0 980 940" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="940" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="60" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">Épaisseur corticale (FreeSurfer)</text>
+  <text x="75" y="129" class="d">148 régions, atlas Destrieux ; niveau région</text>
+  <text x="75" y="145" class="d">7 499 scans, 33 scanners, 8–97 ans</text>
+  <text x="75" y="161" class="d">7 jeux ; dont 1 017 patients</text>
+
+  <rect x="530" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge (covariable, p=1)</text>
+  <text x="545" y="129" class="d">Sexe → effet de batch</text>
+  <text x="545" y="145" class="d">Site → effet de batch (HBR)</text>
+  <text x="545" y="161" class="d">μ linéaire, bruit homoscédastique (cadre extensible)</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="170" x2="485" y2="192" stroke="#64748b"/>
+  <line x1="725" y1="170" x2="495" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="194" width="420" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="234" class="d">HBR (partial pooling) : prior partagé sur θ par site</text>
+  <text x="295" y="250" class="d">PyMC3, échantillonneur NUTS</text>
+  <text x="295" y="266" class="d">vs complete pooling, no-pooling, ComBat</text>
+  <text x="295" y="282" class="d">Transfert d'hyperpriors → recalibration nouveaux sites</text>
+  <line x1="490" y1="192" x2="490" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="326" width="380" height="86" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="346" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="366" class="d">z = (y − f_μ)/f_σ⁺ ; signé ; plage 95 % = μ±1,96σ</text>
+  <text x="315" y="382" class="d">Indice de probabilité anormale (p-value)</text>
+  <text x="315" y="398" class="d">Déviations non biaisées par le site (classif. au hasard)</text>
+  <line x1="490" y1="294" x2="490" y2="326" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 1 racine teal -->
+  <rect x="330" y="452" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="490" y="472" text-anchor="middle" class="t">Par région</text>
+  <text x="345" y="492" class="d">Z-scores sur 148 aires corticales</text>
+  <text x="345" y="506" class="d">Indice de probabilité anormale par région</text>
+  <line x1="490" y1="412" x2="490" y2="452" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail (3) -->
+  <rect x="80" y="560" width="270" height="56" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="215" y="580" text-anchor="middle" class="t">Détection d'atypies</text>
+  <text x="95" y="599" class="d">Détection d'anomalie : AUC patients</text>
+  <text x="95" y="613" class="d">vs sains (permutations ×1000)</text>
+
+  <rect x="355" y="560" width="270" height="56" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="490" y="580" text-anchor="middle" class="t">Localisation</text>
+  <text x="370" y="599" class="d">Régions discriminantes recouvrent</text>
+  <text x="370" y="613" class="d">les aires connues de chaque trouble</text>
+
+  <rect x="630" y="560" width="270" height="56" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="765" y="580" text-anchor="middle" class="t">Comparaison de groupes</text>
+  <text x="645" y="599" class="d">AUC par diagnostic (SZ, BD,</text>
+  <text x="645" y="613" class="d">MDD, MCI, AZ) vs sains</text>
+
+  <line x1="430" y1="510" x2="215" y2="560" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="510" x2="490" y2="560" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="550" y1="510" x2="765" y2="560" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="700" width="380" height="86" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="722" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="742" class="d">Diagnostic / pronostic des troubles mentaux</text>
+  <text x="315" y="758" class="d">Psychiatrie de précision</text>
+  <text x="315" y="774" class="d">Modèle réutilisable sur nouveaux sites (recalibration)</text>
+
+  <line x1="215" y1="616" x2="430" y2="700" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="616" x2="490" y2="700" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="765" y1="616" x2="550" y2="700" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

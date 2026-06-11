@@ -1,0 +1,90 @@
+<svg viewBox="0 0 980 900" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="900" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="60" y="74" width="390" height="100" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">150 mesures morphométriques régionales / sujet</text>
+  <text x="75" y="129" class="d">14 volumes sous-cort. + 68 épaisseurs + 68 surfaces</text>
+  <text x="75" y="145" class="d">Atlas Aseg + Desikan-Killiany (FreeSurfer, T1)</text>
+  <text x="75" y="161" class="d">37 407 sujets sains, 3–90 ans, 87 jeux (ENIGMA)</text>
+
+  <rect x="530" y="74" width="390" height="100" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge (non linéaire) ; modèles sexe-spécifiques</text>
+  <text x="545" y="129" class="d">Mesures globales linéaires : ICV, épaisseur/surface moy.</text>
+  <text x="545" y="145" class="d">Effets négligeables : scanner, version FS, Euler Number</text>
+  <text x="545" y="161" class="d">Niveau sujet</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="174" x2="485" y2="192" stroke="#64748b"/>
+  <line x1="725" y1="174" x2="495" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="194" width="420" height="104" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="234" class="d">Benchmark de 8 algorithmes (OLSR, BLR, GAMLSS, LMS,</text>
+  <text x="295" y="250" class="d">GPR, WBLR, HBR, MFPR), sexe- et région-spécifiques</text>
+  <text x="295" y="266" class="d">Optimal : MFPR — précision ≈ LMS/GPR/WBLR, CPU &lt;1 s</text>
+  <text x="295" y="282" class="d">Train/test 80/20, 5F-CV ; plateau ≈ 3 000 sujets</text>
+  <line x1="490" y1="192" x2="490" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="328" width="380" height="80" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="348" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="368" class="d">z = (y − ŷ) / RMSE_m ; signé</text>
+  <text x="315" y="384" class="d">ŷ et RMSE_m issus du modèle MFPR pré-entraîné</text>
+  <text x="315" y="400" class="d">Seuillage binaire : non rapporté</text>
+  <line x1="490" y1="298" x2="490" y2="328" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : 1 racine teal -->
+  <rect x="330" y="450" width="320" height="62" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="490" y="470" text-anchor="middle" class="t">Par région</text>
+  <text x="345" y="490" class="d">z-scores des 150 régions morphométriques</text>
+  <text x="345" y="506" class="d">Vecteur régional par sujet → entrée des modèles ML</text>
+  <line x1="490" y1="408" x2="490" y2="450" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail -->
+  <rect x="330" y="546" width="320" height="56" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="490" y="566" text-anchor="middle" class="t">Prédiction</text>
+  <text x="345" y="586" class="d">SVC diagnostic (AUC 0,63, p&lt;0,001 ; HCP-EP)</text>
+  <text x="345" y="599" class="d">Ridge PANSS : au niveau du hasard</text>
+
+  <rect x="330" y="630" width="320" height="56" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="490" y="650" text-anchor="middle" class="t">Comparaison de groupes</text>
+  <text x="345" y="670" class="d">z-scores &gt; mesures brutes pour séparer</text>
+  <text x="345" y="683" class="d">patients (psychose précoce) vs témoins (0,63 vs 0,49)</text>
+
+  <line x1="490" y1="512" x2="490" y2="546" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="602" x2="490" y2="630" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="724" width="380" height="80" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="744" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="764" class="d">Psychose précoce / schizophrénie (HCP-EP)</text>
+  <text x="315" y="780" class="d">Référentiel normatif → meilleure discrimination</text>
+  <text x="315" y="796" class="d">Outil ouvert CentileBrain pour scorer un échantillon</text>
+
+  <line x1="490" y1="686" x2="490" y2="724" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

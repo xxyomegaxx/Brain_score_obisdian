@@ -1,0 +1,102 @@
+<svg viewBox="0 0 920 1100" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <style>
+    .hdr  { font-size:15px; font-weight:700; fill:#0f172a; }
+    .body { font-size:12.5px; fill:#1e293b; }
+    .cap  { font-size:11px; fill:#475569; }
+    .title{ font-size:18px; font-weight:700; fill:#0f172a; }
+    .conn { stroke:#64748b; stroke-width:1.6; fill:none; }
+  </style>
+
+  <text x="460" y="30" text-anchor="middle" class="title">Lawrence et al. (2021) — Microstructure WM, âge &amp; sexe (UK Biobank, n=15 628)</text>
+
+  <!-- LEGENDE -->
+  <rect x="648" y="46" width="252" height="86" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="662" y="66" class="hdr">Légende</text>
+  <rect x="662" y="78" width="16" height="16" rx="3" fill="#ccfbf1" stroke="#14b8a6"/>
+  <text x="686" y="91" class="body">Niveau du score (teal)</text>
+  <rect x="662" y="102" width="16" height="16" rx="3" fill="#ffe4e0" stroke="#fb7185"/>
+  <text x="686" y="115" class="body">Finalité du score (corail)</text>
+
+  <!-- CONNECTEURS (tracés d'abord, sous les boîtes) -->
+  <path class="conn" d="M460,108 L460,124" marker-end="url(#arrow)"/>
+  <path class="conn" d="M460,116 L240,116 L240,145" marker-end="url(#arrow)"/>
+  <path class="conn" d="M460,116 L680,116 L680,145" marker-end="url(#arrow)"/>
+  <path class="conn" d="M240,285 L240,310 L460,310 L460,326" marker-end="url(#arrow)"/>
+  <path class="conn" d="M680,265 L680,310 L460,310" />
+  <path class="conn" d="M460,454 L460,486" marker-end="url(#arrow)"/>
+  <path class="conn" d="M460,626 L460,666" marker-end="url(#arrow)"/>
+  <path class="conn" d="M460,796 L460,826" marker-end="url(#arrow)"/>
+  <path class="conn" d="M460,922 L460,958" marker-end="url(#arrow)"/>
+
+  <!-- DONNEES D'ENTREE (bleu) -->
+  <rect x="300" y="50" width="320" height="58" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.6"/>
+  <text x="460" y="74" text-anchor="middle" class="hdr">Données d'entrée</text>
+  <text x="460" y="94" text-anchor="middle" class="body">IRM de diffusion (dMRI) — un seul scanner</text>
+
+  <!-- FEATURES (y) -->
+  <rect x="55" y="145" width="370" height="140" rx="10" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.6"/>
+  <text x="69" y="166" class="hdr">Features (y)</text>
+  <text x="69" y="186" class="body">12 métriques de microstructure de la substance blanche</text>
+  <text x="69" y="204" class="body">DTI : FA, MD, AD, RD · TDF : FA</text>
+  <text x="69" y="222" class="body">NODDI : OD, ICVF, ISOVF</text>
+  <text x="69" y="240" class="body">MAPMRI : RTOP, RTAP, RTPP</text>
+  <text x="69" y="262" class="body">Niveau : par ROI (WM totale, corps calleux, +14 ROIs)</text>
+  <text x="69" y="279" class="cap">Nombre de points : n = 15 628 sujets, 45–80 ans</text>
+
+  <!-- COVARIABLES (x) -->
+  <rect x="495" y="145" width="370" height="120" rx="10" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.6"/>
+  <text x="509" y="166" class="hdr">Covariables (x)</text>
+  <text x="509" y="186" class="body">Âge (45–80 ans) et sexe (47,6 % hommes)</text>
+  <text x="509" y="204" class="body">Covariables de nuisance (liste exacte non précisée)</text>
+  <text x="509" y="226" class="body">Effets non-linéaires de l'âge :</text>
+  <text x="509" y="244" class="body">polynômes fractionnaires</text>
+  <text x="509" y="261" class="cap">Stratification par sexe pour les courbes normatives</text>
+
+  <!-- MODELISATION NORMATIVE (violet) -->
+  <rect x="250" y="326" width="420" height="128" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.6"/>
+  <text x="460" y="348" text-anchor="middle" class="hdr">Modélisation normative</text>
+  <text x="266" y="370" class="body">Méthode : statistiques classiques (pas d'IA)</text>
+  <text x="266" y="388" class="body">Âge : polynômes fractionnaires (non-linéaire, data-driven)</text>
+  <text x="266" y="406" class="body">Courbes centiles sexe-stratifiées : régression quantile</text>
+  <text x="266" y="424" class="body">Granularité : par ROI · validation : transversale</text>
+  <text x="266" y="442" class="body">Robustesse : seuils p&lt;0,01 / p&lt;0,001 + modèle d'âge alt.</text>
+
+  <!-- SCORES DEVIANTS (ambre) -->
+  <rect x="250" y="486" width="420" height="140" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.6"/>
+  <text x="460" y="508" text-anchor="middle" class="hdr">Scores déviants (position centile)</text>
+  <text x="266" y="530" class="body">Référence = courbes normatives par âge et sexe</text>
+  <text x="266" y="548" class="body">Centiles fournis : 5e / 25e / 50e / 75e / 95e</text>
+  <text x="266" y="566" class="body">Direction : extrêmes &lt; 5e ou &gt; 95e centile (« anormal »)</text>
+  <text x="266" y="588" class="body">Z-score / déviation par sujet : NON calculé ni appliqué</text>
+  <text x="266" y="608" class="cap">Le papier livre les courbes de référence, pas un score individuel</text>
+
+  <!-- BRANCHE TEAL : NIVEAU = PAR REGION -->
+  <rect x="280" y="666" width="360" height="130" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="1.8"/>
+  <text x="460" y="688" text-anchor="middle" class="hdr">Niveau — Par région</text>
+  <text x="296" y="710" class="body">Courbes normatives calculées par ROI</text>
+  <text x="296" y="728" class="body">WM totale, corps calleux, +14 ROIs d'atlas</text>
+  <text x="296" y="746" class="body">Effets âge/sexe localisés (tailles d'effet = ΔR²)</text>
+  <text x="296" y="764" class="body">Sensibilité max. à l'âge : TDF, puis DTI, NODDI</text>
+  <text x="296" y="782" class="body">Sensibilité max. au sexe : NODDI, puis DTI</text>
+
+  <!-- FEUILLE CORAIL (finalité non réalisée) -->
+  <rect x="280" y="826" width="360" height="96" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="460" y="848" text-anchor="middle" class="hdr">Finalité du score</text>
+  <text x="296" y="870" class="body">Détection d'atypies &amp; Stratification :</text>
+  <text x="296" y="888" class="body">visées explicitement comme objectif…</text>
+  <text x="296" y="906" class="body">…mais NON réalisées ici (travaux futurs)</text>
+
+  <!-- APPLICATION CLINIQUE (pointillés) -->
+  <rect x="200" y="958" width="520" height="110" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="460" y="980" text-anchor="middle" class="hdr">Application clinique (visée future)</text>
+  <text x="216" y="1002" class="body">Identifier les individus à WM anormale pour leur âge/sexe</text>
+  <text x="216" y="1020" class="body">Cibler les phénotypes neuraux les plus atteints</text>
+  <text x="216" y="1038" class="body">Maladies neurodégénératives liées au vieillissement (ex. Alzheimer)</text>
+  <text x="216" y="1058" class="cap">Non réalisé dans ce papier — la contribution est le référentiel normatif</text>
+</svg>

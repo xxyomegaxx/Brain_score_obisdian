@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 870" width="900" height="870" font-family="Segoe UI,Arial,sans-serif"><defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs><rect x="0" y="0" width="900" height="870" fill="#ffffff"/><text x="20" y="32" font-family="Segoe UI,Arial" font-size="14" font-weight="700" fill="#0f172a">Zabihi et al. 2019 — Anatomie corticale hétérogène de l&#x27;autisme (modèle normatif)</text><g><rect x="662" y="20" width="220" height="56" rx="8" fill="#ffffff" stroke="#cbd5e1"/><rect x="672" y="32" width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/><text x="692" y="43" font-family="Segoe UI,Arial" font-size="11" fill="#1e293b">teal = niveau du score</text><rect x="672" y="52" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#fb7185"/><text x="692" y="63" font-family="Segoe UI,Arial" font-size="11" fill="#1e293b">corail = finalité du score</text></g><rect x="190.0" y="28" width="520" height="116" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="202.0" y="47" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#2563eb">Données d&#x27;entrée</text>
+<text x="202.0" y="65" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Features (y) : épaisseur corticale (et surface) par vertex, ~maillage</text>
+<text x="202.0" y="81" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">cortical FreeSurfer.</text>
+<text x="202.0" y="97" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Covariables (x) : âge, sexe.</text>
+<text x="202.0" y="113" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Échantillon : 206 sujets TD (entraînement) ; 321 sujets ASD (test). 6–31</text>
+<text x="202.0" y="129" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">ans.</text>
+<rect x="190.0" y="174" width="520" height="100" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="202.0" y="193" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#7c3aed">Modélisation normative</text>
+<text x="202.0" y="211" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Méthode : régression par processus gaussien (GPR), un modèle par vertex.</text>
+<text x="202.0" y="227" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Granularité : vertexwise (toute la surface corticale).</text>
+<text x="202.0" y="243" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Validation : 10-fold CV sur les TD, puis ré-entraînement sur tous les TD.</text>
+<text x="202.0" y="259" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Modèle estimé sur les TD uniquement (évite l&#x27;enrichissement en ASD).</text>
+<rect x="190.0" y="304" width="520" height="116" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="202.0" y="323" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#d97706">Scores déviants</text>
+<text x="202.0" y="341" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Z-score par vertex (carte de probabilité normative, NPM) vs pattern</text>
+<text x="202.0" y="357" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">typique.</text>
+<text x="202.0" y="373" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Seuillage : FDR p&lt;.05 par sujet.</text>
+<text x="202.0" y="389" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Direction : déviations positives et négatives séparées.</text>
+<text x="202.0" y="405" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Score résumé : statistique des valeurs extrêmes (moyenne tronquée 1% top).</text>
+<line x1="450.0" y1="144" x2="450.0" y2="174" stroke="#64748b" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="450.0" y1="274" x2="450.0" y2="304" stroke="#64748b" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="450.0" y1="420" x2="235.0" y2="454" stroke="#0d9488" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="55.0" y="454" width="360" height="84" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+<text x="67.0" y="473" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#0d9488">Par région (vertexwise)</text>
+<text x="67.0" y="491" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Cartes Z par vertex seuillées (FDR).</text>
+<text x="67.0" y="507" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Carte de recouvrement : compte des vertices</text>
+<text x="67.0" y="523" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">déviants à travers la cohorte.</text>
+<line x1="235.0" y1="538" x2="235.0" y2="562" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="55.0" y="562" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="67.0" y="581" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Localisation</text>
+<text x="67.0" y="599" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Où surviennent les déviations (recouvrement faible</text>
+<text x="67.0" y="615" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">entre sujets, déviations dispersées).</text>
+<line x1="235.0" y1="630" x2="235.0" y2="654" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="55.0" y="654" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="67.0" y="673" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Comparaison de groupes</text>
+<text x="67.0" y="691" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">GLM vertexwise ASD vs TD en parallèle : peu de</text>
+<text x="67.0" y="707" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">différences de groupe.</text>
+<line x1="450.0" y1="420" x2="665.0" y2="454" stroke="#0d9488" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="485.0" y="454" width="360" height="100" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+<text x="497.0" y="473" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#0d9488">Global par sujet</text>
+<text x="497.0" y="491" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Score résumé = déviation maximale par sujet</text>
+<text x="497.0" y="507" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">(valeurs extrêmes).</text>
+<text x="497.0" y="523" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Aussi déviation extrême régionale (atlas</text>
+<text x="497.0" y="539" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Desikan-Killiany).</text>
+<line x1="665.0" y1="554" x2="665.0" y2="578" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="485.0" y="578" width="360" height="68" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="497.0" y="597" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Détection d&#x27;atypies</text>
+<text x="497.0" y="615" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Patterns individualisés très hétérogènes ; chaque</text>
+<text x="497.0" y="631" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">sujet a son empreinte.</text>
+<line x1="665.0" y1="646" x2="665.0" y2="670" stroke="#fb7185" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="485.0" y="670" width="360" height="84" rx="10" fill="#ffe4e0" stroke="#fb7185" stroke-width="2"/>
+<text x="497.0" y="689" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#fb7185">Association au phénotype</text>
+<text x="497.0" y="707" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Corrélations de Spearman avec sévérité ADI-R /</text>
+<text x="497.0" y="723" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">ADOS-2 ; comportements répétitifs survivent la</text>
+<text x="497.0" y="739" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">correction.</text>
+<line x1="235.0" y1="722" x2="235.0" y2="782" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<line x1="665.0" y1="754" x2="665.0" y2="782" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<rect x="20" y="782" width="860" height="68" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="32" y="801" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#7c3aed">Application clinique (vers médecine de précision)</text>
+<text x="32" y="819" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Empreintes neurobiologiques individualisées en ASD ; au-delà du paradigme cas-témoins.</text>
+<text x="32" y="835" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#1e293b">Lien avec sévérité des comportements répétitifs et de la communication sociale.</text></svg>

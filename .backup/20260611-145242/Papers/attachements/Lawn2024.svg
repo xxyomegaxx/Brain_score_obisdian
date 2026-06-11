@@ -1,0 +1,112 @@
+<svg viewBox="0 0 980 900" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="900" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+
+  <rect x="60" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">Connectivité fonctionnelle enrichie (REACT)</text>
+  <text x="75" y="129" class="d">6 systèmes : NAT, DAT, SERT, VAChT, mGluR5, GABA-A</text>
+  <text x="75" y="145" class="d">ROIs cortico-sous-cortico-cérébelleux</text>
+  <text x="75" y="161" class="d">607 sains + 119 patients (SZ/BPD/TDAH)</text>
+
+  <rect x="530" y="74" width="390" height="96" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge et sexe</text>
+  <text x="545" y="129" class="d">Niveau sujet</text>
+  <text x="545" y="145" class="d">Effets non-linéaires : non rapporté</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="170" x2="485" y2="192" stroke="#64748b"/>
+  <line x1="725" y1="170" x2="495" y2="192" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="194" width="420" height="98" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="214" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="234" class="d">Régression norme = f(âge, sexe) par ROI/réseau</text>
+  <text x="295" y="250" class="d">Algorithme précis : non rapporté</text>
+  <text x="295" y="266" class="d">Entraîné sur 70 % des sains, testé sur 30 %</text>
+  <text x="295" y="282" class="d">Régions à variance expliquée positive conservées</text>
+  <line x1="490" y1="192" x2="490" y2="194" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="324" width="380" height="84" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="344" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="364" class="d">Z par ROI et par réseau moléculaire ; signé</text>
+  <text x="315" y="380" class="d">Score résumé = déviation moyenne par réseau</text>
+  <text x="315" y="396" class="d">Seuil de déviation extrême : non rapporté</text>
+  <line x1="490" y1="292" x2="490" y2="324" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- racines teal -->
+  <rect x="110" y="438" width="330" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="275" y="458" text-anchor="middle" class="t">Par région</text>
+  <text x="125" y="478" class="d">Z-scores par ROI de chaque réseau enrichi</text>
+  <text x="125" y="492" class="d">Différences VAChT, mGluR5, GABA-A</text>
+
+  <rect x="540" y="438" width="330" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="705" y="458" text-anchor="middle" class="t">Global par sujet</text>
+  <text x="555" y="478" class="d">Score résumé = déviation moyenne par réseau</text>
+  <text x="555" y="492" class="d">Un indice par sujet et par système</text>
+
+  <line x1="430" y1="408" x2="275" y2="438" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="550" y1="408" x2="705" y2="438" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail gauche -->
+  <rect x="110" y="528" width="330" height="44" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="275" y="546" text-anchor="middle" class="t">Localisation</text>
+  <text x="125" y="563" class="d">Clusters précunéus, SMA, cervelet, occipital</text>
+
+  <rect x="110" y="586" width="330" height="44" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="275" y="604" text-anchor="middle" class="t">Comparaison de groupes</text>
+  <text x="125" y="621" class="d">ANOVAs : SZ/BPD &lt; sains (mGluR5, GABA-A)</text>
+
+  <rect x="110" y="644" width="330" height="44" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="275" y="662" text-anchor="middle" class="t">Association au phénotype</text>
+  <text x="125" y="679" class="d">Similarité des déviations ↔ symptômes (PC2)</text>
+
+  <line x1="275" y1="496" x2="275" y2="528" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="275" y1="572" x2="275" y2="586" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="275" y1="630" x2="275" y2="644" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail droite -->
+  <rect x="540" y="528" width="330" height="44" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="705" y="546" text-anchor="middle" class="t">Prédiction</text>
+  <text x="555" y="563" class="d">Régression logistique : AUC 0,75 (SZ), 0,73 (GABA-A)</text>
+
+  <rect x="540" y="586" width="330" height="44" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="705" y="604" text-anchor="middle" class="t">Stratification</text>
+  <text x="555" y="621" class="d">Espace transdiagnostique commun symptômes↔neuro</text>
+
+  <line x1="705" y1="496" x2="705" y2="528" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="705" y1="572" x2="705" y2="586" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="772" width="380" height="86" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="794" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="814" class="d">Schizophrénie, trouble bipolaire, TDAH (transdiagnostique)</text>
+  <text x="315" y="830" class="d">Symptômes partagés (PC2) ↔ circuits moléculaires</text>
+  <text x="315" y="846" class="d">Vers des traitements ciblés mécanistiquement</text>
+
+  <line x1="275" y1="688" x2="430" y2="772" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="705" y1="630" x2="550" y2="772" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

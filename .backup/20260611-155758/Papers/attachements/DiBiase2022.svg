@@ -1,0 +1,161 @@
+<svg viewBox="0 0 1180 1700" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="1700" fill="#ffffff"/>
+
+  <!-- Titre -->
+  <text x="590" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Di Biase et al. 2022 — Hétérogénéité de l'épaisseur corticale &amp; types cellulaires (schizophrénie)</text>
+
+  <!-- Légende -->
+  <rect x="395" y="46" width="15" height="15" rx="3" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text x="416" y="58" font-size="13" fill="#334155">teal = niveau du score</text>
+  <rect x="640" y="46" width="15" height="15" rx="3" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="661" y="58" font-size="13" fill="#334155">corail = finalité du score</text>
+
+  <!-- ===================== TRONC ===================== -->
+
+  <!-- Données d'entrée : header bleu -->
+  <rect x="455" y="82" width="270" height="34" rx="8" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+  <text x="590" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Données d'entrée</text>
+
+  <!-- Features (y) -->
+  <rect x="150" y="140" width="380" height="135" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="170" y="165" font-size="14" font-weight="700" fill="#1e3a8a">Features (y)</text>
+  <text x="170" y="190" font-size="12.5" fill="#1e293b">• Épaisseur corticale (CTh) régionale</text>
+  <text x="170" y="211" font-size="12.5" fill="#1e293b">• 34 régions — atlas Desikan-Killiany (hém. gauche)</text>
+  <text x="170" y="232" font-size="12.5" fill="#1e293b">• 1 valeur de CTh par région et par sujet</text>
+  <text x="170" y="253" font-size="12.5" fill="#1e293b">• Mesure FreeSurfer, harmonisée entre scanners</text>
+
+  <!-- Covariables (x) -->
+  <rect x="650" y="140" width="380" height="135" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="670" y="165" font-size="14" font-weight="700" fill="#1e3a8a">Covariables (x)</text>
+  <text x="670" y="190" font-size="12.5" fill="#1e293b">• Âge et sexe</text>
+  <text x="670" y="211" font-size="12.5" fill="#1e293b">• Niveau : sujet</text>
+  <text x="670" y="232" font-size="12.5" fill="#1e293b">• Effets non-linéaires via courbes de centiles</text>
+  <text x="670" y="253" font-size="12.5" fill="#1e293b">• (aucune autre covariable rapportée)</text>
+
+  <!-- arrows from header to subboxes -->
+  <line x1="540" y1="116" x2="360" y2="138" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="640" y1="116" x2="820" y2="138" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- converge to Modélisation -->
+  <line x1="340" y1="275" x2="500" y2="320" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="840" y1="275" x2="680" y2="320" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Modélisation normative (violet) -->
+  <rect x="360" y="322" width="460" height="150" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="590" y="347" text-anchor="middle" font-size="15" font-weight="700" fill="#5b21b6">Modélisation normative</text>
+  <text x="380" y="373" font-size="12.5" fill="#1e293b">• Régression quantile (bootstrap, IC n=1000)</text>
+  <text x="380" y="394" font-size="12.5" fill="#1e293b">• Plage normative = centiles 5–95 % (par âge/sexe)</text>
+  <text x="380" y="415" font-size="12.5" fill="#1e293b">• Granularité : par région (34 régions)</text>
+  <text x="380" y="436" font-size="12.5" fill="#1e293b">• Entraînée sur témoins sains : n=1127 (HCP), n=185 (ASRB)</text>
+  <text x="380" y="457" font-size="12.5" fill="#1e293b">• Validation : 2 cohortes indépendantes (HCP, ASRB)</text>
+
+  <line x1="590" y1="472" x2="590" y2="518" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Scores déviants (ambre) -->
+  <rect x="350" y="520" width="480" height="150" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="590" y="545" text-anchor="middle" font-size="15" font-weight="700" fill="#92400e">Scores déviants</text>
+  <text x="370" y="571" font-size="12.5" fill="#1e293b">• Déviation Δ = z-score, par région et par sujet</text>
+  <text x="370" y="592" font-size="12.5" fill="#1e293b">• Catégories : normal / supra-normal / infra-normal</text>
+  <text x="370" y="613" font-size="12.5" fill="#1e293b">• Direction : signé (seuils 5ᵉ et 95ᵉ centiles)</text>
+  <text x="370" y="634" font-size="12.5" fill="#1e293b">• &gt;90 % des témoins dans la plage → modèle vérifié</text>
+  <text x="370" y="655" font-size="12.5" fill="#1e293b">• &gt;80 % des patients dans la plage pour chaque région</text>
+
+  <!-- ===================== ARBORESCENCE ===================== -->
+  <!-- branches to teal roots -->
+  <line x1="430" y1="670" x2="330" y2="722" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="750" y1="670" x2="850" y2="722" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Teal : Par région -->
+  <rect x="140" y="724" width="380" height="120" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="160" y="749" font-size="14" font-weight="700" fill="#0f766e">Niveau — Par région</text>
+  <text x="160" y="774" font-size="12.5" fill="#1e293b">• Profil de déviation sur les 34 régions</text>
+  <text x="160" y="795" font-size="12.5" fill="#1e293b">• z-score conservé région par région</text>
+  <text x="160" y="816" font-size="12.5" fill="#1e293b">• Base de toutes les analyses spatiales</text>
+
+  <!-- Teal : Global par sujet -->
+  <rect x="660" y="724" width="380" height="120" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="680" y="749" font-size="14" font-weight="700" fill="#0f766e">Niveau — Global par sujet</text>
+  <text x="680" y="774" font-size="12.5" fill="#1e293b">• Déviation moyenne sur tout le cerveau (1 score/sujet)</text>
+  <text x="680" y="795" font-size="12.5" fill="#1e293b">• Agrégation des z-scores régionaux</text>
+  <text x="680" y="816" font-size="12.5" fill="#1e293b">• Plus basse au Sous-type I, plus haute au Sous-type III</text>
+
+  <!-- ===== Feuilles branche Par région (center 330) ===== -->
+  <line x1="330" y1="844" x2="330" y2="884" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Détection d'atypies -->
+  <rect x="150" y="886" width="360" height="110" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="168" y="910" font-size="13.5" font-weight="700" fill="#be123c">Détection d'atypies</text>
+  <text x="168" y="933" font-size="12" fill="#1e293b">• Classement infra/supra-normal par région</text>
+  <text x="168" y="953" font-size="12" fill="#1e293b">• ≥1 région déviante : 69 % (découverte), 72 % (valid.)</text>
+  <text x="168" y="973" font-size="12" fill="#1e293b">• vs 57 % / 51 % chez les témoins (p&lt;0,001)</text>
+
+  <line x1="330" y1="996" x2="330" y2="1026" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Localisation -->
+  <rect x="150" y="1028" width="360" height="115" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="168" y="1052" font-size="13.5" font-weight="700" fill="#be123c">Localisation</text>
+  <text x="168" y="1075" font-size="12" fill="#1e293b">• Déviations infra-normales : frontal, temporal, insula</text>
+  <text x="168" y="1095" font-size="12" fill="#1e293b">• Plus sévères : insula + frontal moyen rostral (HCP)</text>
+  <text x="168" y="1115" font-size="12" fill="#1e293b">• frontal moyen caudal (ASRB)</text>
+  <text x="168" y="1135" font-size="12" fill="#1e293b">• &lt;20 % des patients déviants pour une région donnée</text>
+
+  <line x1="330" y1="1143" x2="330" y2="1173" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Comparaison de groupes -->
+  <rect x="150" y="1175" width="360" height="95" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="168" y="1199" font-size="13.5" font-weight="700" fill="#be123c">Comparaison de groupes</text>
+  <text x="168" y="1222" font-size="12" fill="#1e293b">• Patients vs témoins</text>
+  <text x="168" y="1242" font-size="12" fill="#1e293b">• Plus de déviations infra-normales chez les patients</text>
+  <text x="168" y="1262" font-size="12" fill="#1e293b">• Reproduit sur les 2 cohortes</text>
+
+  <line x1="330" y1="1270" x2="330" y2="1300" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Association au phénotype (transcriptomique) -->
+  <rect x="150" y="1302" width="360" height="120" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="168" y="1326" font-size="13.5" font-weight="700" fill="#be123c">Association au phénotype</text>
+  <text x="168" y="1346" font-size="11.5" fill="#475569" font-style="italic">(couplage transcriptomique)</text>
+  <text x="168" y="1368" font-size="12" fill="#1e293b">• Profil de déviation ↔ cartes d'expression de 7 types</text>
+  <text x="168" y="1388" font-size="12" fill="#1e293b">• Couplage significatif pour 5/7 (Ansari-Bradley, FDR&lt;0,05)</text>
+  <text x="168" y="1408" font-size="12" fill="#1e293b">• Astrocytes, endothélial, OPC, neurones excit./inhib.</text>
+
+  <!-- ===== Feuilles branche Global par sujet (center 850) ===== -->
+  <line x1="850" y1="844" x2="850" y2="884" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Stratification -->
+  <rect x="670" y="886" width="360" height="125" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="688" y="910" font-size="13.5" font-weight="700" fill="#be123c">Stratification</text>
+  <text x="688" y="933" font-size="12" fill="#1e293b">• Clustering Ward + PCA (4 composantes)</text>
+  <text x="688" y="953" font-size="12" fill="#1e293b">• 3 sous-types cellulaires (gap statistic)</text>
+  <text x="688" y="973" font-size="12" fill="#1e293b">• ASRB : Sous-type I 22 %, II 43 %, III 25 %</text>
+  <text x="688" y="993" font-size="12" fill="#1e293b">• Indépendant de l'âge, du sexe et de la clinique</text>
+
+  <line x1="850" y1="1011" x2="850" y2="1041" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Association au phénotype (génomique) -->
+  <rect x="670" y="1043" width="360" height="135" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+  <text x="688" y="1067" font-size="13.5" font-weight="700" fill="#be123c">Association au phénotype</text>
+  <text x="688" y="1087" font-size="11.5" fill="#475569" font-style="italic">(validation génomique — sczPRS)</text>
+  <text x="688" y="1109" font-size="12" fill="#1e293b">• Déviation globale ↔ scores polygéniques par type</text>
+  <text x="688" y="1129" font-size="12" fill="#1e293b">• Sous-type I (neuronal/endo.) : r=−0,40 ; FDRp=0,010</text>
+  <text x="688" y="1149" font-size="12" fill="#1e293b">• Sous-type III (glie/OPC) : r=−0,30 ; FDRp=0,028</text>
+  <text x="688" y="1169" font-size="12" fill="#1e293b">• Sous-type II : r=+0,20 ; FDRp=0,037</text>
+
+  <!-- ===================== APPLICATION CLINIQUE ===================== -->
+  <line x1="330" y1="1422" x2="520" y2="1488" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="850" y1="1178" x2="850" y2="1300" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="850" y1="1300" x2="660" y2="1488" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="300" y="1490" width="580" height="150" rx="12" fill="#f8fafc" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="9 6"/>
+  <text x="590" y="1516" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">Application clinique</text>
+  <text x="320" y="1542" font-size="12.5" fill="#1e293b">• Stratification cellulaire de la schizophrénie (3 sous-types)</text>
+  <text x="320" y="1564" font-size="12.5" fill="#1e293b">• Oriente la modélisation in vitro de sous-groupes de patients</text>
+  <text x="320" y="1586" font-size="12.5" fill="#1e293b">• Aucun lien avec symptômes / durée de maladie (non discriminant)</text>
+  <text x="320" y="1608" font-size="12.5" fill="#1e293b">• Maladie multicellulaire : la composition cellulaire varie selon l'individu</text>
+  <text x="320" y="1630" font-size="12.5" fill="#1e293b">• Intègre 3 échelles : génome ↔ transcriptome ↔ IRM</text>
+</svg>

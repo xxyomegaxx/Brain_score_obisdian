@@ -1,0 +1,135 @@
+<svg viewBox="0 0 880 1210" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .box{cursor:pointer;}
+      .box:hover rect, .box:hover .frame{filter:brightness(1.05);stroke-width:2.5;}
+      .ttl{font-weight:700;font-size:14px;}
+      .ln{font-size:11.5px;}
+      .edge{stroke:#94a3b8;stroke-width:1.6;fill:none;marker-end:url(#arw);}
+    </style>
+    <script type="text/javascript"><![CDATA[
+      function sendPrompt(t){ try{ if(window.parent) window.parent.postMessage({type:'prompt',text:t},'*'); }catch(e){} }
+    ]]></script>
+  </defs>
+
+  <rect width="880" height="1210" fill="#ffffff"/>
+
+  <!-- Legende -->
+  <g transform="translate(620,16)">
+    <rect width="244" height="58" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="12" y="14" width="16" height="12" rx="3" fill="#14b8a6"/>
+    <text x="36" y="24" class="ln" fill="#334155">teal = niveau du score</text>
+    <rect x="12" y="34" width="16" height="12" rx="3" fill="#fb7185"/>
+    <text x="36" y="44" class="ln" fill="#334155">corail = finalite du score</text>
+  </g>
+
+  <!-- Donnees d'entree -->
+  <g class="box" onclick="sendPrompt('Detaille l-etape Donnees d-entree de la revue Chen 2021')">
+    <rect x="280" y="20" width="320" height="34" rx="9" fill="#3b82f6"/>
+    <text x="440" y="42" text-anchor="middle" class="ttl" fill="#fff">Donnees d'entree</text>
+  </g>
+
+  <g class="box" onclick="sendPrompt('Quelles features (y) la revue Chen 2021 passe-t-elle en revue ?')">
+    <rect x="70" y="78" width="300" height="100" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="84" y="98" class="ttl" fill="#1e3a8a">Features (y)</text>
+    <text x="84" y="118" class="ln" fill="#1e3a8a">Volume MG, epaisseur, volumes regionaux</text>
+    <text x="84" y="136" class="ln" fill="#1e3a8a">Connectivite fonctionnelle (revue)</text>
+    <text x="84" y="154" class="ln" fill="#1e3a8a">Niveau : global par sujet + par region</text>
+    <text x="84" y="172" class="ln" fill="#1e3a8a">Nb de points : non rapporte (revue)</text>
+  </g>
+  <g class="box" onclick="sendPrompt('Quelles covariables (x) sont discutees dans Chen 2021 ?')">
+    <rect x="470" y="78" width="300" height="100" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="484" y="98" class="ttl" fill="#1e3a8a">Covariables (x)</text>
+    <text x="484" y="118" class="ln" fill="#1e3a8a">Age (du prenatal a ~90 ans selon cohorte)</text>
+    <text x="484" y="136" class="ln" fill="#1e3a8a">Sexe ; ethnicite ; SSE (modulateurs)</text>
+    <text x="484" y="154" class="ln" fill="#1e3a8a">Niveau : sujet</text>
+    <text x="484" y="172" class="ln" fill="#1e3a8a">Age non-lineaire (GAMLSS/GAMM)</text>
+  </g>
+  <path class="edge" d="M360,54 L225,78"/>
+  <path class="edge" d="M520,54 L620,78"/>
+  <path class="edge" d="M220,178 C220,196 430,198 435,208"/>
+  <path class="edge" d="M620,178 C620,196 450,198 445,208"/>
+
+  <!-- Modelisation normative -->
+  <g class="box" onclick="sendPrompt('Quelles familles de modeles normatifs Chen 2021 passe-t-elle en revue ?')">
+    <rect x="240" y="210" width="400" height="128" rx="10" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="256" y="232" class="ttl" fill="#5b21b6">Modelisation normative</text>
+    <text x="256" y="252" class="ln" fill="#5b21b6">Familles : GLMM, GAMM, GAMLSS</text>
+    <text x="256" y="270" class="ln" fill="#5b21b6">Sortie : courbes de centiles (2-98 %)</text>
+    <text x="256" y="288" class="ln" fill="#5b21b6">Granularite : global par sujet + regional</text>
+    <text x="256" y="306" class="ln" fill="#5b21b6">Enjeux : fiabilite, effets de site (ComBat)</text>
+    <text x="256" y="324" class="ln" fill="#5b21b6">N : variable selon cohortes (non rapporte)</text>
+  </g>
+  <path class="edge" d="M440,338 L440,358"/>
+
+  <!-- Scores deviants -->
+  <g class="box" onclick="sendPrompt('Comment les scores de deviation (centiles) sont-ils definis dans Chen 2021 ?')">
+    <rect x="240" y="360" width="400" height="100" rx="10" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="256" y="382" class="ttl" fill="#92400e">Scores deviants</text>
+    <text x="256" y="402" class="ln" fill="#92400e">Position en centile sur la charte</text>
+    <text x="256" y="420" class="ln" fill="#92400e">Velocite = croisement de centiles dans le temps</text>
+    <text x="256" y="438" class="ln" fill="#92400e">Direction : signe (sous / sur la mediane)</text>
+    <text x="256" y="456" class="ln" fill="#92400e">Seuils chiffres : non rapporte</text>
+  </g>
+  <path class="edge" d="M440,460 L240,508"/>
+  <path class="edge" d="M440,460 L640,508"/>
+
+  <!-- Branche teal gauche : Global par sujet -->
+  <g class="box" onclick="sendPrompt('Comment le niveau Global par sujet est-il exploite dans Chen 2021 ?')">
+    <rect x="70" y="510" width="340" height="92" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+    <text x="86" y="532" class="ttl" fill="#0f766e">Niveau — Global par sujet</text>
+    <text x="86" y="552" class="ln" fill="#0f766e">Centile du volume cerebral global</text>
+    <text x="86" y="570" class="ln" fill="#0f766e">Trajectoire individuelle vs population</text>
+    <text x="86" y="588" class="ln" fill="#0f766e">Vitesse de croissance (ml/an ou centile/an)</text>
+  </g>
+  <path class="edge" d="M240,602 L240,626"/>
+
+  <g class="box" onclick="sendPrompt('Detection d-atypies dans Chen 2021 : detaille')">
+    <rect x="80" y="628" width="320" height="84" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="96" y="649" class="ttl" fill="#9f1239">Finalite — Detection d'atypies</text>
+    <text x="96" y="669" class="ln" fill="#9f1239">Reperer les ecarts a la trajectoire normative</text>
+    <text x="96" y="687" class="ln" fill="#9f1239">Possiblement avant les signes cliniques</text>
+  </g>
+  <path class="edge" d="M240,712 L240,740"/>
+
+  <g class="box" onclick="sendPrompt('Stratification de severite dans Chen 2021 : detaille')">
+    <rect x="80" y="742" width="320" height="84" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="96" y="763" class="ttl" fill="#9f1239">Finalite — Stratification</text>
+    <text x="96" y="783" class="ln" fill="#9f1239">Predire la severite (spectre psychotique)</text>
+    <text x="96" y="801" class="ln" fill="#9f1239">Sous-groupes selon l'ampleur de l'ecart</text>
+  </g>
+  <path class="edge" d="M240,826 C240,860 360,866 380,882"/>
+
+  <!-- Branche teal droite : Par region -->
+  <g class="box" onclick="sendPrompt('Comment le niveau Par region est-il exploite dans Chen 2021 ?')">
+    <rect x="470" y="510" width="340" height="92" rx="10" fill="#ccfbf1" stroke="#14b8a6" stroke-width="2"/>
+    <text x="486" y="532" class="ttl" fill="#0f766e">Niveau — Par region</text>
+    <text x="486" y="552" class="ln" fill="#0f766e">Chartes regionales (amygdale, hippocampe)</text>
+    <text x="486" y="570" class="ln" fill="#0f766e">Deviations localisees par ROI</text>
+    <text x="486" y="588" class="ln" fill="#0f766e">Reliabilite variable selon la mesure</text>
+  </g>
+  <path class="edge" d="M640,602 L640,626"/>
+
+  <g class="box" onclick="sendPrompt('Association au phenotype dans Chen 2021 : detaille')">
+    <rect x="480" y="628" width="320" height="84" rx="10" fill="#ffe4e6" stroke="#fb7185" stroke-width="2"/>
+    <text x="496" y="649" class="ttl" fill="#9f1239">Finalite — Association au phenotype</text>
+    <text x="496" y="669" class="ln" fill="#9f1239">Deviations regionales liees aux symptomes</text>
+    <text x="496" y="687" class="ln" fill="#9f1239">ex. epaisseur corticale et severite autistique</text>
+  </g>
+  <path class="edge" d="M640,712 C640,800 560,860 540,882"/>
+
+  <!-- Application clinique (pointilles) -->
+  <g class="box" onclick="sendPrompt('Quelle application clinique la revue Chen 2021 met-elle en avant ?')">
+    <rect class="frame" x="180" y="884" width="520" height="124" rx="12" fill="#f8fafc" stroke="#475569" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="440" y="908" text-anchor="middle" class="ttl" fill="#1e293b">Application clinique</text>
+    <text x="440" y="930" text-anchor="middle" class="ln" fill="#334155">Detection precoce : depression, anxiete, schizophrenie</text>
+    <text x="440" y="950" text-anchor="middle" class="ln" fill="#334155">TDAH (maturation ralentie), autisme</text>
+    <text x="440" y="970" text-anchor="middle" class="ln" fill="#334155">Extension au vieillissement / Alzheimer</text>
+    <text x="440" y="990" text-anchor="middle" class="ln" fill="#334155">Reste surtout un outil de recherche (longitudinal requis)</text>
+  </g>
+
+  <text x="20" y="1180" class="ln" fill="#94a3b8">Boites cliquables — touchez un noeud pour l'explorer en detail.</text>
+</svg>

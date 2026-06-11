@@ -1,0 +1,100 @@
+<svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="800" fill="#ffffff"/>
+
+  <!-- legende -->
+  <g transform="translate(610,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <g>
+    <rect x="290" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="450" y="42" text-anchor="middle" class="t">Données d'entrée</text>
+  </g>
+
+  <!-- sous-cases features / covariables -->
+  <g>
+    <rect x="110" y="74" width="340" height="104" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="280" y="93" text-anchor="middle" class="t">Features (y)</text>
+    <text x="125" y="113" class="d">Épaisseur corticale + volumes sous-corticaux (Freesurfer 6.0)</text>
+    <text x="125" y="129" class="d">Niveau : par phénotype / région (IDP)</text>
+    <text x="125" y="145" class="d">Durs : ventricule lat., hypointensités MB ; faciles : ETICV…</text>
+    <text x="125" y="161" class="d">2ᵉ jeu : latent IRMf 2D (autoenc. + UMAP), n=20 781</text>
+  </g>
+  <g>
+    <rect x="470" y="74" width="320" height="104" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="630" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+    <text x="485" y="113" class="d">Âge, sexe (covariables)</text>
+    <text x="485" y="129" class="d">Site = effet de batch (random effect)</text>
+    <text x="485" y="145" class="d">Niveau : sujet</text>
+    <text x="485" y="161" class="d">Effet non-linéaire de l'âge (expansion de base)</text>
+  </g>
+  <line x1="450" y1="54" x2="280" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="450" y1="54" x2="630" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="280" y1="178" x2="445" y2="200" stroke="#64748b"/>
+  <line x1="630" y1="178" x2="455" y2="200" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <g>
+    <rect x="255" y="202" width="390" height="112" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+    <text x="450" y="222" text-anchor="middle" class="t">Modélisation normative</text>
+    <text x="270" y="242" class="d">HBR + vraisemblance SHASH_b (skew ε, kurtosis δ)</text>
+    <text x="270" y="258" class="d">Inférence MCMC (2×1500, 500 burn-in) ; z par MAP</text>
+    <text x="270" y="274" class="d">Baselines : Warped BLR, HBR-gaussien</text>
+    <text x="270" y="290" class="d">1 modèle / phénotype ; 82 sites ; 58 834 ctrl + 2 925 pat.</text>
+    <text x="270" y="306" class="d">Validation : 10-fold CV ; convergence R̂ &lt; 1,1</text>
+  </g>
+  <line x1="450" y1="200" x2="450" y2="202" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <g>
+    <rect x="270" y="338" width="360" height="86" rx="8" fill="#fef3c7" stroke="#d97706"/>
+    <text x="450" y="358" text-anchor="middle" class="t">Scores déviants</text>
+    <text x="285" y="378" class="d">z-score = déviation au centile prédit (SHASH inverse)</text>
+    <text x="285" y="394" class="d">Calculé par phénotype et par sujet ; signé</text>
+    <text x="285" y="410" class="d">Cible : z des sujets sains ~ N(0,1) ; pas de seuil clinique</text>
+  </g>
+  <line x1="450" y1="314" x2="450" y2="338" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- arborescence : niveau (teal) -->
+  <g>
+    <rect x="300" y="448" width="300" height="74" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="450" y="468" text-anchor="middle" class="t">Par région</text>
+    <text x="315" y="488" class="d">z-score par phénotype / IDP</text>
+    <text x="315" y="504" class="d">~150+ phénotypes corticaux &amp; sous-corticaux</text>
+  </g>
+  <line x1="450" y1="424" x2="450" y2="448" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- finalite : usage methodologique (pas de finalite clinique => neutre) -->
+  <g>
+    <rect x="290" y="546" width="320" height="86" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="2 2"/>
+    <text x="450" y="566" text-anchor="middle" class="t">Usage : validation méthodologique</text>
+    <text x="305" y="586" class="d">Gaussianité des z-scores : skew/kurtosis ≈ 0, QQ-plots</text>
+    <text x="305" y="602" class="d">Effets de site : AUC 1v1 ≈ 0,5 (sites indistinguables)</text>
+    <text x="305" y="620" class="lbl">Aucune finalité clinique réalisée (corail absent)</text>
+  </g>
+  <line x1="450" y1="522" x2="450" y2="546" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <g>
+    <rect x="260" y="664" width="380" height="74" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+    <text x="450" y="684" text-anchor="middle" class="t">Application clinique</text>
+    <text x="275" y="704" class="d">Aucune — papier purement méthodologique</text>
+    <text x="275" y="720" class="d">Données patientes (n=2 925) servent à valider, pas analysées en aval</text>
+  </g>
+  <line x1="450" y1="632" x2="450" y2="664" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>

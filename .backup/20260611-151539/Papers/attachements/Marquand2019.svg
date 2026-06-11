@@ -1,0 +1,101 @@
+<svg viewBox="0 0 980 860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .t{font-size:12.5px;font-weight:700;fill:#0f172a}
+      .d{font-size:10.5px;fill:#334155}
+      .lbl{font-size:10px;fill:#475569;font-style:italic}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="860" fill="#ffffff"/>
+
+  <g transform="translate(690,16)">
+    <rect width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="20" y="11" class="lbl">teal = niveau du score</text>
+    <rect y="22" width="14" height="14" rx="3" fill="#ffe4e0" stroke="#e26d5a"/>
+    <text x="20" y="33" class="lbl">corail = finalité</text>
+  </g>
+
+  <!-- 1. Donnees d'entree -->
+  <rect x="330" y="20" width="320" height="34" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="490" y="42" text-anchor="middle" class="t">Données d'entrée (cadre conceptuel)</text>
+
+  <rect x="60" y="74" width="390" height="92" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="255" y="93" text-anchor="middle" class="t">Features (y)</text>
+  <text x="75" y="113" class="d">Readout biologique quantitatif (IRM)</text>
+  <text x="75" y="129" class="d">Ex. épaisseur corticale, activité régionale</text>
+  <text x="75" y="145" class="d">Niveau région / voxel</text>
+  <text x="75" y="161" class="d">Revue : pas de jeu de données unique</text>
+
+  <rect x="530" y="74" width="390" height="92" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="725" y="93" text-anchor="middle" class="t">Covariables (x)</text>
+  <text x="545" y="113" class="d">Âge, sexe ou variables cliniques</text>
+  <text x="545" y="129" class="d">Mapping inversable (« brain age »)</text>
+  <text x="545" y="145" class="d">Niveau sujet</text>
+  <text x="545" y="161" class="d">Non-linéarités : critère de choix du modèle</text>
+
+  <line x1="490" y1="54" x2="255" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="490" y1="54" x2="725" y2="74" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="255" y1="166" x2="485" y2="190" stroke="#64748b"/>
+  <line x1="725" y1="166" x2="495" y2="190" stroke="#64748b"/>
+
+  <!-- 2. Modelisation normative -->
+  <rect x="280" y="192" width="420" height="98" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="490" y="212" text-anchor="middle" class="t">Modélisation normative</text>
+  <text x="295" y="232" class="d">Cadre en 4 étapes : cohorte → modèle → validation → application</text>
+  <text x="295" y="248" class="d">Méthodes : GPR, hiérarchique, polynomiale, quantile…</text>
+  <text x="295" y="264" class="d">Sépare variation aléatoire vs épistémique</text>
+  <text x="295" y="280" class="d">Validation hors-échantillon (ex. CV)</text>
+  <line x1="490" y1="190" x2="490" y2="192" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- 3. Scores deviants -->
+  <rect x="300" y="322" width="380" height="84" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="490" y="342" text-anchor="middle" class="t">Scores déviants</text>
+  <text x="315" y="362" class="d">Z-score = écart / incertitude prédictive ; signé</text>
+  <text x="315" y="378" class="d">Estimation précise des centiles extrêmes</text>
+  <text x="315" y="394" class="d">Seuil non prescrit (revue)</text>
+  <line x1="490" y1="290" x2="490" y2="322" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- racines teal -->
+  <rect x="120" y="438" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="280" y="458" text-anchor="middle" class="t">Par région</text>
+  <text x="135" y="478" class="d">Un modèle par localisation cérébrale</text>
+  <text x="135" y="492" class="d">Cartes de déviation localisées</text>
+
+  <rect x="540" y="438" width="320" height="58" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="700" y="458" text-anchor="middle" class="t">Global par sujet</text>
+  <text x="555" y="478" class="d">Profil individuel d'écart à la norme</text>
+  <text x="555" y="492" class="d">Inférence au niveau du participant</text>
+
+  <line x1="430" y1="406" x2="280" y2="438" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="550" y1="406" x2="700" y2="438" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- feuilles corail -->
+  <rect x="80" y="538" width="380" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="270" y="558" text-anchor="middle" class="t">Localisation</text>
+  <text x="95" y="576" class="d">Cartographie des écarts par localisation cérébrale</text>
+
+  <rect x="520" y="538" width="380" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="710" y="558" text-anchor="middle" class="t">Stratification</text>
+  <text x="535" y="576" class="d">Parse l'hétérogénéité au-delà des cas-témoins</text>
+
+  <rect x="300" y="606" width="380" height="48" rx="8" fill="#ffe4e0" stroke="#e26d5a"/>
+  <text x="490" y="626" text-anchor="middle" class="t">Détection d'atypies</text>
+  <text x="315" y="644" class="d">Écarts individuels sans chevauchement requis</text>
+
+  <line x1="280" y1="496" x2="270" y2="538" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="700" y1="496" x2="710" y2="538" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="270" y1="586" x2="470" y2="606" stroke="#64748b" marker-end="url(#arrow)"/>
+  <line x1="710" y1="586" x2="510" y2="606" stroke="#64748b" marker-end="url(#arrow)"/>
+
+  <!-- application clinique (pointilles) -->
+  <rect x="300" y="700" width="380" height="80" rx="8" fill="#ffffff" stroke="#475569" stroke-dasharray="6 4"/>
+  <text x="490" y="722" text-anchor="middle" class="t">Application clinique</text>
+  <text x="315" y="742" class="d">Survol des conditions psychiatriques</text>
+  <text x="315" y="758" class="d">Hétérogénéité &gt; « patient moyen »</text>
+  <text x="315" y="774" class="d">Vers une psychiatrie de précision</text>
+
+  <line x1="490" y1="654" x2="490" y2="700" stroke="#64748b" marker-end="url(#arrow)"/>
+</svg>
